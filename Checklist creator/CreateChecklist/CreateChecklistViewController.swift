@@ -11,6 +11,8 @@ import UIKit
 
 protocol CreateChecklistViewModel {
     
+    func createNewChecklist(name: String, motivationText: String?, icon: ChecklistIcon)
+    
 }
 
 final class CreateChecklistViewController: UIViewController {
@@ -25,9 +27,12 @@ final class CreateChecklistViewController: UIViewController {
     @IBOutlet weak var motivationTextField: UITextField!
     @IBOutlet weak var chooseIconLabel: UILabel!
     
+    var viewModel: CreateChecklistViewModel? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.viewModel = CreateChecklistModel()
         
         configureUI()
     }
@@ -62,6 +67,9 @@ final class CreateChecklistViewController: UIViewController {
     }
     
     @IBAction func doneButtonTapped(_ sender: Any) {
+        guard let viewModel = self.viewModel else { return }
+        
+        viewModel.createNewChecklist(name: self.checklistTitleTextField.text ?? "", motivationText: self.motivationTextField.text ?? "", icon: .coffee)
         self.dismiss(animated: true, completion: nil)
     }
 }

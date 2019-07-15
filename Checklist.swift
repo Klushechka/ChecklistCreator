@@ -7,22 +7,26 @@
 //
 
 import Foundation
+import RealmSwift
 
-enum ChecklistIcon {
-    case coffee
+@objc enum ChecklistIcon: Int {
+    case coffee = 0
     case muffin
     case sigarette
+    case universal
 }
 
-final class Checklist {
+class Checklist: Object {
     
-    var numberOfDays: Int
-    var name: String
-    var motivationText: String?
-    var icon: ChecklistIcon
+    @objc dynamic var numberOfDays: NSNumber? = 0
+    @objc dynamic var name: String?
+    @objc dynamic var motivationText: String?
+    @objc dynamic var icon: ChecklistIcon = .universal
     
-    init(numberOfDays: Int, name: String, motivationText: String?, icon: ChecklistIcon) {
-        self.numberOfDays = numberOfDays
+    convenience required init(numberOfDays: Int?, name: String?, motivationText: String?, icon: ChecklistIcon) {
+        self.init()
+        
+        self.numberOfDays = numberOfDays as NSNumber?
         self.name = name
         self.motivationText = motivationText
         self.icon = icon
