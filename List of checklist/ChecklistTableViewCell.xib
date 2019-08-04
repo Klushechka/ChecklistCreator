@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChecklistTableViewCell" id="IdO-mt-iyI" customClass="ChecklistTableViewCell" customModule="Checklist_creator" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IdO-mt-iyI" id="fmN-hS-ZSq">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="99.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m9N-BN-jk0">
+                        <rect key="frame" x="20" y="10" width="374" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8eG-7m-YxL" userLabel="MotivationText Label">
+                        <rect key="frame" x="20" y="41" width="374" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="m9N-BN-jk0" secondAttribute="trailing" constant="20" id="0DC-B7-c5c"/>
+                    <constraint firstItem="m9N-BN-jk0" firstAttribute="leading" secondItem="fmN-hS-ZSq" secondAttribute="leading" constant="20" id="5gM-vq-bv5"/>
+                    <constraint firstItem="8eG-7m-YxL" firstAttribute="top" secondItem="m9N-BN-jk0" secondAttribute="bottom" constant="10" id="CLI-wF-nBb"/>
+                    <constraint firstItem="8eG-7m-YxL" firstAttribute="leading" secondItem="m9N-BN-jk0" secondAttribute="leading" id="VLa-dh-vYZ"/>
+                    <constraint firstItem="m9N-BN-jk0" firstAttribute="top" secondItem="fmN-hS-ZSq" secondAttribute="top" constant="10" id="egS-x6-DsC"/>
+                    <constraint firstAttribute="trailing" secondItem="8eG-7m-YxL" secondAttribute="trailing" constant="20" id="lzP-dX-Otj"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="motivationTextLabel" destination="8eG-7m-YxL" id="OcQ-TM-zT9"/>
+                <outlet property="nameLabel" destination="m9N-BN-jk0" id="Vz5-1r-ekZ"/>
+            </connections>
+            <point key="canvasLocation" x="-164" y="-363"/>
+        </tableViewCell>
+    </objects>
+</document>

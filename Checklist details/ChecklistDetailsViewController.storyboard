@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Checklist Details View Controller-->
+        <scene sceneID="cJb-EQ-sFU">
+            <objects>
+                <viewController id="o1k-ZW-Heb" customClass="ChecklistDetailsViewController" customModule="Checklist_creator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3Wy-sq-3Zp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UCt-GV-Vik" userLabel="Checklist name label">
+                                <rect key="frame" x="20" y="94" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="97i-ll-wll" userLabel="Motivation text label">
+                                <rect key="frame" x="20" y="145" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ZIb-hd-mjf" firstAttribute="trailing" secondItem="UCt-GV-Vik" secondAttribute="trailing" constant="20" id="1LE-sI-dVz"/>
+                            <constraint firstItem="97i-ll-wll" firstAttribute="trailing" secondItem="UCt-GV-Vik" secondAttribute="trailing" id="Aed-dZ-3BA"/>
+                            <constraint firstItem="97i-ll-wll" firstAttribute="top" secondItem="UCt-GV-Vik" secondAttribute="bottom" constant="30" id="Grn-mk-VwY"/>
+                            <constraint firstItem="UCt-GV-Vik" firstAttribute="top" secondItem="ZIb-hd-mjf" secondAttribute="top" constant="50" id="XCS-qA-JrN"/>
+                            <constraint firstItem="UCt-GV-Vik" firstAttribute="leading" secondItem="ZIb-hd-mjf" secondAttribute="leading" constant="20" id="Z50-a9-hQ0"/>
+                            <constraint firstItem="97i-ll-wll" firstAttribute="leading" secondItem="UCt-GV-Vik" secondAttribute="leading" id="h2J-ny-yQz"/>
+                            <constraint firstItem="UCt-GV-Vik" firstAttribute="centerX" secondItem="3Wy-sq-3Zp" secondAttribute="centerX" id="vH2-H5-6q9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ZIb-hd-mjf"/>
+                    </view>
+                    <connections>
+                        <outlet property="checklistNameLabel" destination="97i-ll-wll" id="LYI-GN-DTT"/>
+                        <outlet property="motivationTextLabel" destination="97i-ll-wll" id="H6S-0n-bBe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Of3-Nt-bLF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="81" y="36"/>
+        </scene>
+    </scenes>
+</document>

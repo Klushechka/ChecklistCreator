@@ -14,14 +14,11 @@ final class CreateChecklistModel: CreateChecklistViewModel {
     func createNewChecklist(name: String, motivationText: String?, icon: ChecklistIcon) {
         let checklist = Checklist(numberOfDays: 30, name: name, motivationText: motivationText, icon: icon)
         
-        let realm = try! Realm()
+        let checklistDataProvider = ChecklistDataProvider.shared
         
-        try! realm.write {
-            realm.add(checklist)
-        }
+        checklistDataProvider.saveChecklist(checklist: checklist)
         
-        print (Realm.Configuration.defaultConfiguration.fileURL)
-        print ("New checklist is \(checklist.name) \(checklist.motivationText)")
+        print (Realm.Configuration.defaultConfiguration.fileURL as Any)
         
     }
     
