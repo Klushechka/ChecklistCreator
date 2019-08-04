@@ -2,10 +2,9 @@
 # platform :ios, '12.0'
 
 target 'Checklist creator' do
+  	use_frameworks!
 	pod 'SnapKit', '~> 4.0.0'
 	pod 'RealmSwift'
-  	use_frameworks!
-  # Pods for Checklist creator
 
 end
 
