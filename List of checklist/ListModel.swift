@@ -12,10 +12,17 @@ final class ListModel: ListViewModel {
     
     var numberOfItems: Int = 0
     var numberOfChecklistsChanged: (() -> Void)?
-    
+    var isTableHidingNeeded: (() -> Void)?
+
     var checklists: [Checklist]? {
         didSet(oldValue) {
             if self.checklists != oldValue {
+                if self.checklists?.count == 0 {
+                    self.isTableHidingNeeded?()
+
+                    return
+                }
+
                 self.numberOfChecklistsChanged?()
             }
         }
@@ -34,6 +41,5 @@ final class ListModel: ListViewModel {
     func deleteChecklist(with index: Int) {
         self.checklistDataProvider.deleteChecklist(with: index)
         getChecklists()
-
     }
 }

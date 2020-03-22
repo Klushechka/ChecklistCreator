@@ -17,19 +17,21 @@ import RealmSwift
 }
 
 class Checklist: Object {
-    
-    @objc dynamic var numberOfDays: NSNumber? = 0
-    @objc dynamic var name: String?
-    @objc dynamic var motivationText: String?
-    @objc dynamic var icon: ChecklistIcon = .universal
-    
-    convenience required init(numberOfDays: Int?, name: String?, motivationText: String?, icon: ChecklistIcon) {
+
+    @objc dynamic var uuid: String = ""
+    @objc dynamic var numberOfDays: Int = 0
+    @objc dynamic var name: String = ""
+    @objc dynamic var motivationText: String = ""
+    @objc dynamic var icon: String = "task"
+
+    convenience init(uuid: String, numberOfDays: Int?, name: String?, motivationText: String?, iconName: String) {
         self.init()
-        
-        self.numberOfDays = numberOfDays as NSNumber?
-        self.name = name
-        self.motivationText = motivationText
-        self.icon = icon
+
+        self.uuid = uuid
+        self.numberOfDays = numberOfDays ?? 0
+        self.name = name ?? ""
+        self.motivationText = motivationText ?? ""
+        self.icon = iconName
     }
-    
+
 }

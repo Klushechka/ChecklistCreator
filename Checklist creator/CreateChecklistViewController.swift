@@ -11,7 +11,7 @@ import UIKit
 
 protocol CreateChecklistViewModel {
     
-    func createNewChecklist(name: String, motivationText: String?, icon: ChecklistIcon)
+    func createNewChecklist(name: String, motivationText: String?, icon: String)
     
 }
 
@@ -28,6 +28,7 @@ final class CreateChecklistViewController: UIViewController {
     @IBOutlet weak var chooseIconLabel: UILabel!
     
     var viewModel: CreateChecklistViewModel? = nil
+    var checklistAdded: (() -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +36,7 @@ final class CreateChecklistViewController: UIViewController {
         self.viewModel = CreateChecklistModel()
         
         configureUI()
+        monitorTextEditing()
     }
     
     private func configureUI() {
@@ -42,9 +44,9 @@ final class CreateChecklistViewController: UIViewController {
         self.cancelButton.setTitle("Cancel", for: .normal)
         self.cancelButton.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .medium)
         
-        
         self.doneButton.setTitle("Done", for: .normal)
         self.doneButton.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .medium)
+        self.doneButton.isEnabled = false
         
         self.checklistTitleLabel.font = UIFont.systemFont(ofSize: 20, weight: .medium)
         self.checklistTitleLabel.text = "Checklist Title:"
@@ -69,7 +71,21 @@ final class CreateChecklistViewController: UIViewController {
     @IBAction func doneButtonTapped(_ sender: Any) {
         guard let viewModel = self.viewModel else { return }
         
-        viewModel.createNewChecklist(name: self.checklistTitleTextField.text ?? "", motivationText: self.motivationTextField.text ?? "", icon: .coffee)
+        viewModel.createNewChecklist(name: self.checklistTitleTextField.text ?? "", motivationText: self.motivationTextField.text ?? "", icon: "task")
         self.dismiss(animated: true, completion: nil)
+        self.checklistAdded?()
+    }
+}
+
+extension CreateChecklistViewController {
+
+    private func monitorTextEditing() {
+        self.checklistTitleTextField.addTarget(self, action: #selector(enableDoneButton), for: UIControl.Event.editingChanged)
+    }
+
+    @objc private func enableDoneButton() {
+        guard let checklistTitleText = self.checklistTitleTextField.text else { return }
+
+        self.doneButton.isEnabled = !checklistTitleText.isEmpty
     }
 }

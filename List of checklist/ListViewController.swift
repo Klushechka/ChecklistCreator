@@ -14,6 +14,8 @@ protocol ListViewModel {
     
     var numberOfItems: Int { get set }
     var numberOfChecklistsChanged: (() -> Void)? { get set }
+    var isTableHidingNeeded: (() -> Void)? { get set }
+
     var checklists: [Checklist]? { get set }
     func getChecklists()
     func deleteChecklist(with index: Int)
@@ -33,8 +35,8 @@ final class ListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setup()
-        setCallbacks()
+        setupInitialView()
+        setUpdateTableViewCallback()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -54,32 +56,35 @@ final class ListViewController: UIViewController {
     }
     
     
-    private func setup() {
+    private func setupInitialView() {
         self.viewModel = ListModel()
         
         if self.viewModel?.checklists?.count == 0 {
-            self.addChecklistButton.isHidden = true
-            
-            self.placeholderView = PlaceholderView.loadFromNib(name: "PlaceholderView") as? PlaceholderView
-            
-            guard let placeholderView = self.placeholderView else { return }
-            self.viewContainer.addSubview(placeholderView)
-            
-            placeholderView.snp.makeConstraints { make in
-                make.edges.equalToSuperview()
-            }
+            showPlaceholder()
         }
         else {
             configureTableView()
         }
     }
-    
-    private func setCallbacks() {
+
+    private func showPlaceholder() {
+        self.addChecklistButton.isHidden = true
+
+        if self.placeholderView == nil {
+            self.placeholderView = PlaceholderView.loadFromNib(name: "PlaceholderView") as? PlaceholderView
+        }
+
+        guard let placeholderView = self.placeholderView else { return }
+
+        self.viewContainer.addSubview(placeholderView)
+
+        placeholderView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+
         setAddChecklistCallback()
-        setUpdateTableViewCallback()
-        deleteChecklistCallback()
     }
-    
+
     func setUpdateTableViewCallback() {
         self.viewModel?.numberOfChecklistsChanged = {
             self.setDataToTableView()
@@ -95,19 +100,16 @@ final class ListViewController: UIViewController {
         }
     }
     
-    func deleteChecklistCallback() {
-        guard let checklistTableView = self.checklistTableView else { return }
-        checklistTableView.checklistDeletiongInitiated = { index in
-            self.showChecklistDeletionAlert(forCellWith: index)
-        }
-    }
-    
     func presentAddChecklistVC() {
         let storyboard: UIStoryboard = UIStoryboard(name: "CreateChecklistViewController", bundle: nil)
         let checklistViewController = storyboard.instantiateViewController(withIdentifier: "createChecklist") as? CreateChecklistViewController
         
         guard let checklistVC = checklistViewController else { return }
-        
+
+        checklistVC.checklistAdded = { [weak self] in
+            self?.viewModel?.getChecklists()
+        }
+
         self.present(checklistVC, animated: true, completion: nil)
     }
     
@@ -118,46 +120,103 @@ final class ListViewController: UIViewController {
 
 extension ListViewController: UITableViewDelegate {
     
-    func configureTableView() {
-        self.checklistTableView = ChecklistTableView(frame: self.viewContainer.bounds)
+    private func configureTableView() {
+        if self.checklistTableView == nil {
+            self.checklistTableView = ChecklistTableView(frame: self.viewContainer.bounds)
+        }
         
         guard let checklistTableView = self.checklistTableView else { return }
-        
+        guard !self.viewContainer.subviews.contains(checklistTableView) else {
+            checklistTableView.removeFromSuperview()
+            return
+        }
+
         self.viewContainer.addSubview(checklistTableView)
         
         checklistTableView.isHidden = false
         self.placeholderView?.isHidden = true
+        self.addChecklistButton.isHidden = false
         
         setDataToTableView()
+        deleteChecklistCallback()
+        tableHidingCallback()
     }
     
     private func setDataToTableView() {
-         guard let viewModel = self.viewModel, let checklists = viewModel.checklists, let checklistTableView = self.checklistTableView else {
+         guard let viewModel = self.viewModel, let checklists = viewModel.checklists else {
             return
+        }
+
+        guard let checklistTableView = self.checklistTableView else {
+            hidePlaceholderShowTable()
+
+            return
+        }
+
+        if checklists.count > 0 && !self.viewContainer.contains(checklistTableView) {
+            hidePlaceholderShowTable()
         }
         
         checklistTableView.checkilsts = checklists
     }
     
+}
+
+private extension ListViewController {
+
+    func hideTableAndShowPlaceholder() {
+        guard let checklistsTable = self.checklistTableView, self.viewContainer.subviews.contains(checklistsTable) else {
+            return
+        }
+
+        checklistsTable.removeFromSuperview()
+        showPlaceholder()
+    }
+
+    func hidePlaceholderShowTable() {
+        self.placeholderView?.removeFromSuperview()
+        configureTableView()
+    }
+
+}
+
+private extension ListViewController {
+
     func showChecklistDeletionAlert(forCellWith index: Int) {
         let alert = UIAlertController(title: "Delete Checklist", message: "Are you sure you want to delete this checklist?", preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: {(action:UIAlertAction!) in
-            
+
             self.deleteChecklist(with: index)
-            
+
             print("Action")
         }))
         alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: nil))
-        
+
         self.present(alert, animated: true, completion: nil)
     }
-    
+
     func deleteChecklist(with index: Int) {
         guard let viewModel = self.viewModel else { return }
-        
+
         viewModel.deleteChecklist(with: index)
     }
-        
-    
+
+}
+
+private extension ListViewController {
+
+    func deleteChecklistCallback() {
+        guard let checklistTableView = self.checklistTableView else { return }
+        checklistTableView.checklistDeletiongInitiated = { index in
+            self.showChecklistDeletionAlert(forCellWith: index)
+        }
+    }
+
+    func tableHidingCallback() {
+        self.viewModel?.isTableHidingNeeded = { [weak self] in
+            self?.hideTableAndShowPlaceholder()
+        }
+    }
+
 }
 
