@@ -28,7 +28,8 @@ final class ChecklistDataProvider {
     }
     
     func getChecklists() -> [Checklist] {
-        return self.realm.objects(Checklist.self).map { $0 }
+        let checklists = self.realm.objects(Checklist.self).sorted(byKeyPath: "timestamp", ascending: true)
+        return checklists.map { $0 }
     }
     
     func deleteChecklist(with index: Int) {

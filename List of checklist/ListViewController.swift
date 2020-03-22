@@ -116,6 +116,7 @@ final class ListViewController: UIViewController {
     @IBAction func addChecklistButtonTapped(_ sender: UIButton) {
         presentAddChecklistVC()
     }
+
 }
 
 extension ListViewController: UITableViewDelegate {
@@ -140,6 +141,7 @@ extension ListViewController: UITableViewDelegate {
         setDataToTableView()
         deleteChecklistCallback()
         tableHidingCallback()
+        didSelectChecklistCallback()
     }
     
     private func setDataToTableView() {
@@ -215,6 +217,17 @@ private extension ListViewController {
     func tableHidingCallback() {
         self.viewModel?.isTableHidingNeeded = { [weak self] in
             self?.hideTableAndShowPlaceholder()
+        }
+    }
+
+    func didSelectChecklistCallback() {
+        self.checklistTableView?.checklistSelected = { [weak self] indexPathRow in
+            guard let checklistDetailsVC = UIViewController.instantiateFrom(storyboardName: "ChecklistDetailsViewController", identidier: "checklistDetails") as? ChecklistDetailsViewController else { return }
+            guard let checklist = self?.viewModel?.checklists?[indexPathRow] else { return }
+
+            let detailsViewModel = ChecklistDetailsController(checklist: checklist)
+            checklistDetailsVC.viewModel = detailsViewModel
+            self?.navigationController?.pushViewController(checklistDetailsVC, animated: true)
         }
     }
 

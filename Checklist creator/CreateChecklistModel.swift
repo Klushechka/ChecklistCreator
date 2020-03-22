@@ -12,8 +12,7 @@ import RealmSwift
 final class CreateChecklistModel: CreateChecklistViewModel {
     
     func createNewChecklist(name: String, motivationText: String?, icon: String) {
-
-        let checklist = Checklist(uuid: NSUUID().uuidString, numberOfDays: 30, name: name, motivationText: motivationText, iconName: icon)
+        let checklist = Checklist(uuid: NSUUID().uuidString, numberOfDays: 30, name: name, motivationText: motivationText, iconName: icon, timestamp: Date())
         
         let checklistDataProvider = ChecklistDataProvider.shared
         

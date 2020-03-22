@@ -23,8 +23,9 @@ class Checklist: Object {
     @objc dynamic var name: String = ""
     @objc dynamic var motivationText: String = ""
     @objc dynamic var icon: String = "task"
+    @objc dynamic var timestamp: Date?
 
-    convenience init(uuid: String, numberOfDays: Int?, name: String?, motivationText: String?, iconName: String) {
+    convenience init(uuid: String, numberOfDays: Int?, name: String?, motivationText: String?, iconName: String, timestamp: Date) {
         self.init()
 
         self.uuid = uuid
@@ -32,6 +33,7 @@ class Checklist: Object {
         self.name = name ?? ""
         self.motivationText = motivationText ?? ""
         self.icon = iconName
+        self.timestamp = timestamp
     }
 
 }
