@@ -26,8 +26,13 @@ final class CreateChecklistViewController: UIViewController {
     @IBOutlet weak var motivationTextLabel: UILabel!
     @IBOutlet weak var motivationTextField: UITextField!
     @IBOutlet weak var chooseIconLabel: UILabel!
+
+    var collectionView: UICollectionView?
+
+    private let reuseIdentifier = "cell"
     
-    var viewModel: CreateChecklistViewModel? = nil
+    private var viewModel: CreateChecklistViewModel? = nil
+
     var checklistAdded: (() -> Void)?
     
     override func viewDidLoad() {
@@ -52,8 +57,7 @@ final class CreateChecklistViewController: UIViewController {
         self.checklistTitleLabel.text = "Checklist Title:"
         self.checklistTitleTextField.placeholder = "For example, \"30 days without coffee\""
         self.checklistTitleTextField.font = UIFont.systemFont(ofSize: 18, weight: .light)
-        
-        
+
         self.motivationTextLabel.text = "Motivation text:"
         self.motivationTextLabel.font = UIFont.systemFont(ofSize: 20, weight: .medium)
         
@@ -69,9 +73,16 @@ final class CreateChecklistViewController: UIViewController {
     }
     
     @IBAction func doneButtonTapped(_ sender: Any) {
-        guard let viewModel = self.viewModel else { return }
-        
-        viewModel.createNewChecklist(name: self.checklistTitleTextField.text ?? "", motivationText: self.motivationTextField.text ?? "", icon: "task")
+        guard let viewModel = self.viewModel, let cells = self.collectionView?.visibleCells else { return }
+
+        let activeIconCell = cells.filter {$0.isSelected}.first
+
+        guard let selectedIconCell = activeIconCell else { return }
+
+        let iconIndexPath = self.collectionView?.indexPath(for: selectedIconCell)
+        let selectedIcon = ChecklistIcon(rawValue: iconIndexPath?.row ?? ChecklistIcon.universal.raw)?.name ?? ChecklistIcon.universal.name
+
+        viewModel.createNewChecklist(name: self.checklistTitleTextField.text ?? "", motivationText: self.motivationTextField.text ?? "", icon: selectedIcon)
         self.dismiss(animated: true, completion: nil)
         self.checklistAdded?()
     }
@@ -88,4 +99,51 @@ extension CreateChecklistViewController {
 
         self.doneButton.isEnabled = !checklistTitleText.isEmpty
     }
+}
+
+extension CreateChecklistViewController: UICollectionViewDelegate, UICollectionViewDataSource
+{
+
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return ChecklistIcon.allCases.count
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        self.collectionView = collectionView
+
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.reuseIdentifier, for: indexPath) as? IconSelectionCell
+
+        if let imageName = ChecklistIcon(rawValue: indexPath.row)?.name {
+            let iconImage = UIImage(named: imageName)
+
+            cell?.icon.image = iconImage
+        }
+
+        if indexPath.row == ChecklistIcon.universal.raw {
+            cell?.isHighlighted = true
+        }
+
+        return cell ?? UICollectionViewCell()
+    }
+
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("You selected cell #\(indexPath.item)!")
+        highlightSelectedCell(with: indexPath)
+    }
+
+}
+
+extension CreateChecklistViewController {
+
+    func highlightSelectedCell(with indexPath: IndexPath) {
+        let visibleCells = self.collectionView?.visibleCells
+
+        guard let cells = visibleCells else { return }
+
+        for cell in cells {
+            cell.isHighlighted = self.collectionView?.indexPath(for: cell) == indexPath && cell.isSelected
+        }
+    }
+
 }

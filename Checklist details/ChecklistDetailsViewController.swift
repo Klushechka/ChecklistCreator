@@ -20,6 +20,9 @@ final class ChecklistDetailsViewController: UIViewController {
     @IBOutlet weak var checklistNameLabel: UILabel!
     @IBOutlet weak var motivationTextLabel: UILabel!
 
+    var collectionView: UICollectionView?
+    private let reuseIdentifier = "detailsCell"
+
     var viewModel: ChecklistDetailsViewModel?
     
     override func viewDidLoad() {
@@ -38,6 +41,39 @@ final class ChecklistDetailsViewController: UIViewController {
     private func setUpLabels() {
         self.checklistNameLabel.text = self.viewModel?.checklist.name
         self.motivationTextLabel.text = self.viewModel?.checklist.motivationText
+    }
+
+}
+
+extension ChecklistDetailsViewController: UICollectionViewDelegate, UICollectionViewDataSource
+{
+
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.viewModel?.checklist.numberOfDays ?? 30
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        self.collectionView = collectionView
+
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.reuseIdentifier, for: indexPath) as? ChecklistIconCell
+
+        let iconImage = UIImage(named: self.viewModel?.checklist.icon ?? ChecklistIcon.universal.name)
+        cell?.iconImage.image = iconImage
+        cell?.sizeToFit()
+
+        return cell ?? UICollectionViewCell()
+    }
+
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("You selected cell #\(indexPath.item)!")
+        let cell = collectionView.cellForItem(at: indexPath)
+        cell?.isHighlighted = true
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+
+        return CGSize(width: 50, height: 50)
     }
 
 }

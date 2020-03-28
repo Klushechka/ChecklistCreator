@@ -9,11 +9,28 @@
 import Foundation
 import RealmSwift
 
-@objc enum ChecklistIcon: Int {
+class IntObject: Object {
+    dynamic var value = 0
+}
+
+enum ChecklistIcon: Int, CaseIterable {
     case coffee = 0
     case muffin
     case sigarette
     case universal
+
+    var name: String {
+        switch self {
+        case .coffee: return "coffee.png"
+        case .muffin: return "muffin.png"
+        case .sigarette: return "sigarette.png"
+        case .universal: return "universal.png"
+        }
+    }
+
+    var raw: Int {
+        return self.rawValue
+    }
 }
 
 class Checklist: Object {
@@ -24,8 +41,9 @@ class Checklist: Object {
     @objc dynamic var motivationText: String = ""
     @objc dynamic var icon: String = "task"
     @objc dynamic var timestamp: Date?
+    var completedDays: List<IntObject> = List<IntObject>()
 
-    convenience init(uuid: String, numberOfDays: Int?, name: String?, motivationText: String?, iconName: String, timestamp: Date) {
+    convenience init(uuid: String, numberOfDays: Int?, name: String?, motivationText: String?, iconName: String, timestamp: Date, completedDays: List<IntObject> = List<IntObject>()) {
         self.init()
 
         self.uuid = uuid
@@ -34,6 +52,7 @@ class Checklist: Object {
         self.motivationText = motivationText ?? ""
         self.icon = iconName
         self.timestamp = timestamp
+        self.completedDays = completedDays
     }
 
 }
