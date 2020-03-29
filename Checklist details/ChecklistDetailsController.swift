@@ -10,10 +10,23 @@ import Foundation
 
 final class ChecklistDetailsController: ChecklistDetailsViewModel {
 
-    var checklist: Checklist
+    var uuid: String?
+    var checklist: Checklist?
+    var checklistDataProvider: ChecklistDataProvider?
 
-    init(checklist: Checklist) {
-        self.checklist = checklist
+    init(uuid: String) {
+        self.uuid = uuid
+    }
+
+    func requestChecklist() {
+        self.checklistDataProvider = ChecklistDataProvider.shared
+        self.checklist = self.checklistDataProvider?.checklist(uuid: self.uuid)
+    }
+
+    func updatChecklistCompletedDays(dayIndex: Int, action: ChecklistDayAction) {
+        guard let checklist = self.checklist else { return }
+
+        self.checklistDataProvider?.updateChecklist(uuid: checklist.uuid, dayIndex: dayIndex, action: action)
     }
 
 }

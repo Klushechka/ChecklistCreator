@@ -9,6 +9,10 @@
 import Foundation
 import RealmSwift
 
+enum ChecklistDayAction: Int {
+    case add, remove
+}
+
 final class ChecklistDataProvider {
     
     static let shared = ChecklistDataProvider()
@@ -37,6 +41,35 @@ final class ChecklistDataProvider {
         
         try? self.realm.write {
             self.realm.delete(checklists[index])
+        }
+    }
+
+    func checklist(uuid: String?) -> Checklist? {
+        guard let uuid = uuid else { return nil }
+
+        let realm = try! Realm()
+
+        return realm.objects(Checklist.self).filter("uuid = %@", uuid).first
+    }
+
+    func updateChecklist(uuid: String, dayIndex: Int, action: ChecklistDayAction) {
+        let realm = try! Realm()
+
+        try! realm.write {
+            let checklists = realm.objects(Checklist.self).filter("uuid = %@", uuid)
+            guard let checklist = checklists.first else { return }
+
+            let completedDaysIndices = checklist.completedDaysIndices
+            switch action {
+            case .add: completedDaysIndices.append(dayIndex)
+            case .remove:
+                if completedDaysIndices.contains(dayIndex), let indexOfDay = completedDaysIndices.index(of: dayIndex) {
+                    completedDaysIndices.remove(at: indexOfDay)
+                }
+            }
+
+            checklist.completedDaysIndices = completedDaysIndices
+            realm.add(checklist)
         }
     }
     

@@ -16,7 +16,7 @@ final class ChecklistIconCell: UICollectionViewCell {
 
     override var isHighlighted: Bool {
         didSet {
-            if self.isHighlighted {
+            if self.isHighlighted && oldValue != self.isHighlighted {
                 self.layer.borderWidth = 2.0
                 self.layer.cornerRadius = 5.0
                 self.layer.borderColor =

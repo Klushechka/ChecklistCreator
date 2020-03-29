@@ -228,7 +228,8 @@ private extension ListViewController {
             guard let checklistDetailsVC = UIViewController.instantiateFrom(storyboardName: "ChecklistDetailsViewController", identidier: "checklistDetails") as? ChecklistDetailsViewController else { return }
             guard let checklist = self?.viewModel?.checklists?[indexPathRow] else { return }
 
-            let detailsViewModel = ChecklistDetailsController(checklist: checklist)
+            let detailsViewModel = ChecklistDetailsController(uuid: checklist.uuid)
+            detailsViewModel.requestChecklist()
             checklistDetailsVC.viewModel = detailsViewModel
             self?.navigationController?.pushViewController(checklistDetailsVC, animated: true)
         }

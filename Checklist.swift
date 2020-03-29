@@ -41,9 +41,9 @@ class Checklist: Object {
     @objc dynamic var motivationText: String = ""
     @objc dynamic var icon: String = "task"
     @objc dynamic var timestamp: Date?
-    var completedDays: List<IntObject> = List<IntObject>()
+    var completedDaysIndices: List<Int> = List<Int>()
 
-    convenience init(uuid: String, numberOfDays: Int?, name: String?, motivationText: String?, iconName: String, timestamp: Date, completedDays: List<IntObject> = List<IntObject>()) {
+    convenience init(uuid: String, numberOfDays: Int?, name: String?, motivationText: String?, iconName: String, timestamp: Date, completedDaysIndices: List<Int> = List<Int>()) {
         self.init()
 
         self.uuid = uuid
@@ -52,7 +52,7 @@ class Checklist: Object {
         self.motivationText = motivationText ?? ""
         self.icon = iconName
         self.timestamp = timestamp
-        self.completedDays = completedDays
+        self.completedDaysIndices = completedDaysIndices
     }
 
 }

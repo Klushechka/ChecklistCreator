@@ -11,7 +11,10 @@ import UIKit
 
 protocol ChecklistDetailsViewModel {
 
-    var checklist: Checklist { get set }
+    var uuid: String? { get set }
+    var checklist: Checklist? { get set }
+
+    func updatChecklistCompletedDays(dayIndex: Int, action: ChecklistDayAction)
 
 }
 
@@ -45,8 +48,8 @@ final class ChecklistDetailsViewController: UIViewController {
     }
 
     private func setUpLabels() {
-        self.checklistNameLabel.text = self.viewModel?.checklist.name
-        self.motivationTextLabel.text = self.viewModel?.checklist.motivationText
+        self.checklistNameLabel.text = self.viewModel?.checklist?.name
+        self.motivationTextLabel.text = self.viewModel?.checklist?.motivationText
     }
 
 }
@@ -55,7 +58,7 @@ extension ChecklistDetailsViewController: UICollectionViewDelegate, UICollection
 {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.viewModel?.checklist.numberOfDays ?? 30
+        return self.viewModel?.checklist?.numberOfDays ?? 30
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -63,10 +66,13 @@ extension ChecklistDetailsViewController: UICollectionViewDelegate, UICollection
 
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.reuseIdentifier, for: indexPath) as? ChecklistIconCell
 
-        let iconImage = UIImage(named: self.viewModel?.checklist.icon ?? ChecklistIcon.universal.name)
+        let iconImage = UIImage(named: self.viewModel?.checklist?.icon ?? ChecklistIcon.universal.name)
         cell?.iconImage.image = iconImage
         cell?.numberOfDayLabel.text = String(indexPath.row + 1)
-//        cell?.sizeToFit()
+
+        if let dayIsCompleted = self.viewModel?.checklist?.completedDaysIndices.contains(indexPath.row), dayIsCompleted {
+            cell?.isHighlighted = true
+        }
 
         return cell ?? UICollectionViewCell()
     }
@@ -75,7 +81,13 @@ extension ChecklistDetailsViewController: UICollectionViewDelegate, UICollection
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("You selected cell #\(indexPath.item)!")
         let cell = collectionView.cellForItem(at: indexPath)
-        cell?.isHighlighted = true
+
+        guard let isDayCompleted = (self.viewModel?.checklist?.completedDaysIndices.contains(indexPath.row))  else { return }
+
+        cell?.isHighlighted = !isDayCompleted
+        let action: ChecklistDayAction = isDayCompleted ? .remove : .add
+
+        self.viewModel?.updatChecklistCompletedDays(dayIndex: indexPath.row, action: action)
     }
 
 }
