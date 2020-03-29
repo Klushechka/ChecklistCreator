@@ -11,18 +11,13 @@ import UIKit
 class ChecklistTableViewCell: UITableViewCell, NibLoadable {
     
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var checklistIconImage: UIImageView!
     @IBOutlet weak var motivationTextLabel: UILabel!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+
         self.motivationTextLabel.textColor = .lightGray
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
 }

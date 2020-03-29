@@ -17,6 +17,11 @@ enum ChecklistIcon: Int, CaseIterable {
     case coffee = 0
     case muffin
     case sigarette
+    case workout
+    case running
+    case runningWoman
+    case vegan
+    case studying
     case universal
 
     var name: String {
@@ -24,6 +29,11 @@ enum ChecklistIcon: Int, CaseIterable {
         case .coffee: return "coffee.png"
         case .muffin: return "muffin.png"
         case .sigarette: return "sigarette.png"
+        case .workout: return "workout.png"
+        case .running: return "running.png"
+        case .runningWoman: return "running-woman.png"
+        case .vegan: return "vegan.png"
+        case .studying: return "studying.png"
         case .universal: return "universal.png"
         }
     }

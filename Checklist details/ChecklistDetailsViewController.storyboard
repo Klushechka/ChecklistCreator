@@ -29,7 +29,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1yh-iY-tD0">
-                                <rect key="frame" x="10" y="196" width="394" height="666"/>
+                                <rect key="frame" x="5" y="196" width="404" height="666"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="UKH-qE-Lbv">
                                     <size key="itemSize" width="40" height="60"/>
@@ -81,8 +81,8 @@
                             <constraint firstItem="ZIb-hd-mjf" firstAttribute="trailing" secondItem="UCt-GV-Vik" secondAttribute="trailing" constant="20" id="1LE-sI-dVz"/>
                             <constraint firstItem="97i-ll-wll" firstAttribute="trailing" secondItem="UCt-GV-Vik" secondAttribute="trailing" id="Aed-dZ-3BA"/>
                             <constraint firstItem="97i-ll-wll" firstAttribute="top" secondItem="UCt-GV-Vik" secondAttribute="bottom" constant="30" id="Grn-mk-VwY"/>
-                            <constraint firstItem="ZIb-hd-mjf" firstAttribute="trailing" secondItem="1yh-iY-tD0" secondAttribute="trailing" constant="10" id="Rg0-3Y-tqb"/>
-                            <constraint firstItem="1yh-iY-tD0" firstAttribute="leading" secondItem="ZIb-hd-mjf" secondAttribute="leading" constant="10" id="T4P-cm-ScP"/>
+                            <constraint firstItem="ZIb-hd-mjf" firstAttribute="trailing" secondItem="1yh-iY-tD0" secondAttribute="trailing" constant="5" id="Rg0-3Y-tqb"/>
+                            <constraint firstItem="1yh-iY-tD0" firstAttribute="leading" secondItem="ZIb-hd-mjf" secondAttribute="leading" constant="5" id="T4P-cm-ScP"/>
                             <constraint firstItem="UCt-GV-Vik" firstAttribute="top" secondItem="ZIb-hd-mjf" secondAttribute="top" constant="50" id="XCS-qA-JrN"/>
                             <constraint firstItem="UCt-GV-Vik" firstAttribute="leading" secondItem="ZIb-hd-mjf" secondAttribute="leading" constant="20" id="Z50-a9-hQ0"/>
                             <constraint firstItem="97i-ll-wll" firstAttribute="leading" secondItem="UCt-GV-Vik" secondAttribute="leading" id="h2J-ny-yQz"/>

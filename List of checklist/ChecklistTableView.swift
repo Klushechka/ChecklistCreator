@@ -70,7 +70,9 @@ extension ChecklistTableView: UITableViewDataSource {
         if self.checkilsts.count != 0 {
             cell.nameLabel.text = self.checkilsts[indexPath.row].name
             cell.motivationTextLabel.text = self.checkilsts[indexPath.row].motivationText
-            
+
+            let image = UIImage(named: self.checkilsts[indexPath.row].icon)
+            cell.checklistIconImage.image = image
         }
         
         return cell

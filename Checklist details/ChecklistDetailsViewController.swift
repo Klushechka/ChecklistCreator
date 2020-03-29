@@ -109,6 +109,4 @@ extension ChecklistDetailsViewController: UICollectionViewDelegateFlowLayout {
         return CGSize(width: size, height: size)
     }
 
-
-
 }
