@@ -133,8 +133,11 @@ extension ListViewController: UITableViewDelegate {
         }
 
         self.viewContainer.addSubview(checklistTableView)
-        
         checklistTableView.isHidden = false
+        checklistTableView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+
         self.placeholderView?.isHidden = true
         self.addChecklistButton.isHidden = false
         

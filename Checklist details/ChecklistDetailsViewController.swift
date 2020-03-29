@@ -32,6 +32,12 @@ final class ChecklistDetailsViewController: UIViewController {
         setUpAppearance()
     }
 
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+
+        self.collectionView?.collectionViewLayout.invalidateLayout()
+    }
+
     private func setUpAppearance() {
         self.checklistNameLabel.font = UIFont.systemFont(ofSize: 23, weight: .light)
         self.motivationTextLabel.font = UIFont.systemFont(ofSize: 19, weight: .light)
@@ -59,7 +65,8 @@ extension ChecklistDetailsViewController: UICollectionViewDelegate, UICollection
 
         let iconImage = UIImage(named: self.viewModel?.checklist.icon ?? ChecklistIcon.universal.name)
         cell?.iconImage.image = iconImage
-        cell?.sizeToFit()
+        cell?.numberOfDayLabel.text = String(indexPath.row + 1)
+//        cell?.sizeToFit()
 
         return cell ?? UICollectionViewCell()
     }
@@ -71,9 +78,25 @@ extension ChecklistDetailsViewController: UICollectionViewDelegate, UICollection
         cell?.isHighlighted = true
     }
 
+}
+
+extension ChecklistDetailsViewController: UICollectionViewDelegateFlowLayout {
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
-        return CGSize(width: 50, height: 50)
+        let noOfCellsInRow = 7
+
+        let flowLayout = collectionViewLayout as! UICollectionViewFlowLayout
+
+        let totalSpace = flowLayout.sectionInset.left
+            + flowLayout.sectionInset.right
+            + (flowLayout.minimumInteritemSpacing * CGFloat(noOfCellsInRow - 1))
+
+        let size = Int((collectionView.bounds.width - totalSpace) / CGFloat(noOfCellsInRow))
+
+        return CGSize(width: size, height: size)
     }
+
+
 
 }

@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gka-lk-auH">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gka-lk-auH">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,11 +17,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ToK-x5-Aw1" userLabel="View Container">
-                                <rect key="frame" x="0.0" y="128" width="414" height="768"/>
+                                <rect key="frame" x="0.0" y="133" width="414" height="763"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fqy-Dc-EJE" userLabel="Add Checklist Button">
-                                <rect key="frame" x="369" y="88" width="30" height="40"/>
+                                <rect key="frame" x="359" y="93" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="JfL-Tu-7MD"/>
+                                    <constraint firstAttribute="width" constant="40" id="gGB-gh-eWV"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <state key="normal" title="+"/>
                                 <connections>
@@ -34,11 +36,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="ToK-x5-Aw1" secondAttribute="bottom" id="AyB-bY-xQx"/>
-                            <constraint firstItem="fqy-Dc-EJE" firstAttribute="top" secondItem="pYW-VY-Tn0" secondAttribute="top" id="Dt0-Ko-lMo"/>
-                            <constraint firstItem="pYW-VY-Tn0" firstAttribute="trailing" secondItem="ToK-x5-Aw1" secondAttribute="trailing" id="Ndn-R7-oli"/>
+                            <constraint firstItem="fqy-Dc-EJE" firstAttribute="top" secondItem="pYW-VY-Tn0" secondAttribute="top" constant="5" id="Dt0-Ko-lMo"/>
                             <constraint firstItem="ToK-x5-Aw1" firstAttribute="top" secondItem="fqy-Dc-EJE" secondAttribute="bottom" id="TWa-fa-N9N"/>
                             <constraint firstItem="pYW-VY-Tn0" firstAttribute="trailing" secondItem="fqy-Dc-EJE" secondAttribute="trailing" constant="15" id="aab-9a-tGu"/>
-                            <constraint firstItem="ToK-x5-Aw1" firstAttribute="leading" secondItem="pYW-VY-Tn0" secondAttribute="leading" id="iqJ-UZ-82e"/>
+                            <constraint firstItem="ToK-x5-Aw1" firstAttribute="leading" secondItem="kjZ-DQ-DlR" secondAttribute="leading" id="iqJ-UZ-82e"/>
+                            <constraint firstItem="ToK-x5-Aw1" firstAttribute="trailing" secondItem="pYW-VY-Tn0" secondAttribute="trailing" id="pja-E0-uuF"/>
                             <constraint firstItem="ToK-x5-Aw1" firstAttribute="top" secondItem="pYW-VY-Tn0" secondAttribute="top" priority="750" id="qui-cy-48y"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pYW-VY-Tn0"/>

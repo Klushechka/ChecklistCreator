@@ -12,6 +12,7 @@ import UIKit
 final class ChecklistIconCell: UICollectionViewCell {
 
     @IBOutlet weak var iconImage: UIImageView!
+    @IBOutlet weak var numberOfDayLabel: UILabel!
 
     override var isHighlighted: Bool {
         didSet {

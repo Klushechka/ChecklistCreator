@@ -46,6 +46,7 @@ final class ChecklistTableView: UIView, UITableViewDelegate {
     
     private func configureTable() {
         self.addSubview(self.tableView)
+
         self.tableView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
