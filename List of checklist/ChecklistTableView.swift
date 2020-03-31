@@ -73,6 +73,13 @@ extension ChecklistTableView: UITableViewDataSource {
 
             let image = UIImage(named: self.checkilsts[indexPath.row].icon)
             cell.checklistIconImage.image = image
+
+            if self.checkilsts[indexPath.row].numberOfDays == self.checkilsts[indexPath.row].completedDaysIndices.count {
+                cell.checkmarkImage.image = UIImage(named: "checkmark.png")
+            }
+            else {
+                cell.checkmarkImage.image = nil
+            }
         }
         
         return cell

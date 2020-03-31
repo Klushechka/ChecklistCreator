@@ -13,6 +13,7 @@ class ChecklistTableViewCell: UITableViewCell, NibLoadable {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var checklistIconImage: UIImageView!
     @IBOutlet weak var motivationTextLabel: UILabel!
+    @IBOutlet weak var checkmarkImage: UIImageView!
 
     override func awakeFromNib() {
         super.awakeFromNib()

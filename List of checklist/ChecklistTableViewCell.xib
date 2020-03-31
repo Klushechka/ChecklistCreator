@@ -17,13 +17,13 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m9N-BN-jk0">
-                        <rect key="frame" x="90" y="40" width="304" height="20.5"/>
+                        <rect key="frame" x="85" y="40" width="279" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8eG-7m-YxL" userLabel="MotivationText Label">
-                        <rect key="frame" x="90" y="58" width="42" height="20.5"/>
+                        <rect key="frame" x="85" y="58" width="279" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -35,23 +35,34 @@
                             <constraint firstAttribute="width" constant="60" id="r4U-D2-u6k"/>
                         </constraints>
                     </imageView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vjq-ip-rIV">
+                        <rect key="frame" x="369" y="35" width="30" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="30" id="9Id-jE-b8k"/>
+                            <constraint firstAttribute="height" constant="30" id="hoi-S4-VWh"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="m9N-BN-jk0" secondAttribute="trailing" constant="20" id="0DC-B7-c5c"/>
-                    <constraint firstItem="SUA-fs-twT" firstAttribute="leading" secondItem="fmN-hS-ZSq" secondAttribute="leading" constant="15" id="2T6-Jq-YiM"/>
-                    <constraint firstItem="SUA-fs-twT" firstAttribute="centerY" secondItem="fmN-hS-ZSq" secondAttribute="centerY" id="7fE-vJ-6i5"/>
+                    <constraint firstItem="Vjq-ip-rIV" firstAttribute="leading" secondItem="m9N-BN-jk0" secondAttribute="trailing" constant="5" id="0DC-B7-c5c"/>
+                    <constraint firstItem="Vjq-ip-rIV" firstAttribute="leading" secondItem="8eG-7m-YxL" secondAttribute="trailing" constant="5" id="8El-qz-hry"/>
                     <constraint firstItem="m9N-BN-jk0" firstAttribute="centerY" secondItem="fmN-hS-ZSq" secondAttribute="centerY" id="9Kd-kX-SaJ"/>
                     <constraint firstItem="8eG-7m-YxL" firstAttribute="top" secondItem="m9N-BN-jk0" secondAttribute="topMargin" constant="10" id="CY4-a5-LqO"/>
-                    <constraint firstItem="8eG-7m-YxL" firstAttribute="leading" secondItem="SUA-fs-twT" secondAttribute="trailing" constant="15" id="DNu-sc-IvE"/>
-                    <constraint firstItem="m9N-BN-jk0" firstAttribute="leading" secondItem="SUA-fs-twT" secondAttribute="trailing" constant="15" id="iye-Tz-KI4"/>
+                    <constraint firstItem="SUA-fs-twT" firstAttribute="leading" secondItem="fmN-hS-ZSq" secondAttribute="leading" priority="750" constant="15" id="Nch-eH-Y2g"/>
+                    <constraint firstAttribute="trailing" secondItem="Vjq-ip-rIV" secondAttribute="trailing" constant="15" id="anh-94-cNd"/>
+                    <constraint firstItem="SUA-fs-twT" firstAttribute="centerY" secondItem="fmN-hS-ZSq" secondAttribute="centerY" id="fuL-Nj-21L"/>
+                    <constraint firstItem="m9N-BN-jk0" firstAttribute="leading" secondItem="SUA-fs-twT" secondAttribute="trailing" constant="10" id="iye-Tz-KI4"/>
+                    <constraint firstItem="Vjq-ip-rIV" firstAttribute="centerY" secondItem="fmN-hS-ZSq" secondAttribute="centerY" id="tVK-qR-AMd"/>
+                    <constraint firstItem="8eG-7m-YxL" firstAttribute="leading" secondItem="m9N-BN-jk0" secondAttribute="leading" id="vTt-gu-MJu"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="checklistIconImage" destination="SUA-fs-twT" id="kUd-eJ-cwy"/>
+                <outlet property="checkmarkImage" destination="Vjq-ip-rIV" id="yZG-Fc-h9j"/>
                 <outlet property="motivationTextLabel" destination="8eG-7m-YxL" id="iUI-jb-7le"/>
                 <outlet property="nameLabel" destination="m9N-BN-jk0" id="Vz5-1r-ekZ"/>
             </connections>
-            <point key="canvasLocation" x="-164" y="-363"/>
+            <point key="canvasLocation" x="-165.21739130434784" y="-363.61607142857139"/>
         </tableViewCell>
     </objects>
 </document>

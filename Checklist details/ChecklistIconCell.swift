@@ -13,17 +13,14 @@ final class ChecklistIconCell: UICollectionViewCell {
 
     @IBOutlet weak var iconImage: UIImageView!
     @IBOutlet weak var numberOfDayLabel: UILabel!
+    @IBOutlet weak var checkmarkImage: UIImageView!
 
     override var isHighlighted: Bool {
         didSet {
             if self.isHighlighted && oldValue != self.isHighlighted {
-                self.layer.borderWidth = 2.0
-                self.layer.cornerRadius = 5.0
-                self.layer.borderColor =
-                    UIColor.green.withAlphaComponent(0.5).cgColor
+                self.checkmarkImage.image = UIImage(named: "checkmark.png")
             } else {
-                self.layer.borderWidth = 0.0
-                self.layer.borderColor = UIColor.clear.cgColor
+                self.checkmarkImage.image = nil
             }
         }
     }
