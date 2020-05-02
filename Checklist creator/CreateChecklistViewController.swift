@@ -16,7 +16,9 @@ protocol CreateChecklistViewModel {
 }
 
 final class CreateChecklistViewController: UIViewController {
-    
+
+    @IBOutlet weak var containerView: UIView!
+
     @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var navbarTitle: UINavigationItem!
@@ -26,8 +28,10 @@ final class CreateChecklistViewController: UIViewController {
     @IBOutlet weak var motivationTextLabel: UILabel!
     @IBOutlet weak var motivationTextField: UITextField!
     @IBOutlet weak var chooseIconLabel: UILabel!
+    @IBOutlet weak var dayToStartTextLabel: UILabel!
 
     var collectionView: UICollectionView?
+    var weekdayPicker: UIPickerView?
 
     private let reuseIdentifier = "cell"
     
@@ -42,6 +46,8 @@ final class CreateChecklistViewController: UIViewController {
         
         configureUI()
         monitorTextEditing()
+
+        setPickerView()
     }
     
     private func configureUI() {
@@ -66,6 +72,9 @@ final class CreateChecklistViewController: UIViewController {
         
         self.chooseIconLabel.font = UIFont.systemFont(ofSize: 20, weight: .medium)
         self.chooseIconLabel.text = "Choose an icon for your checklist:"
+
+        self.dayToStartTextLabel.font = UIFont.systemFont(ofSize: 20, weight: .medium)
+        self.dayToStartTextLabel.text = "Choose the day to start:"
     }
     
     @IBAction func cancelButtonTapped(_ sender: Any) {
@@ -145,5 +154,46 @@ extension CreateChecklistViewController {
             cell.isHighlighted = self.collectionView?.indexPath(for: cell) == indexPath && cell.isSelected
         }
     }
+
+}
+
+extension CreateChecklistViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+
+    func setPickerView() {
+        self.weekdayPicker = UIPickerView()
+
+        guard let weekdayPicker = self.weekdayPicker else { return }
+        self.containerView.addSubview(weekdayPicker)
+
+        weekdayPicker.snp.makeConstraints { make in
+            make.top.equalTo(self.dayToStartTextLabel.snp.bottom).offset(10)
+            make.leading.equalTo(self.dayToStartTextLabel.snp.leading)
+             make.trailing.equalTo(self.dayToStartTextLabel.snp.trailing)
+        }
+
+        weekdayPicker.delegate = self
+        weekdayPicker.dataSource = self
+    }
+
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int{
+        return DateFormatter.shortWeekdayNames.count
+    }
+
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return DateFormatter.shortWeekdayNames[row]
+    }
+
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int){
+        print ("I've selected the first day of checklist:\(DateFormatter.shortWeekdayNames[row])")
+
+        self.view.endEditing(true)
+    }
+
+
+
 
 }

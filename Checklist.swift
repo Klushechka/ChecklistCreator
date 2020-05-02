@@ -41,6 +41,7 @@ enum ChecklistIcon: Int, CaseIterable {
     var raw: Int {
         return self.rawValue
     }
+
 }
 
 class Checklist: Object {

@@ -20,74 +20,109 @@ protocol ChecklistDetailsViewModel {
 
 final class ChecklistDetailsViewController: UIViewController {
 
-    @IBOutlet weak var checklistNameLabel: UILabel!
     @IBOutlet weak var motivationTextLabel: UILabel!
+    @IBOutlet weak var daysCollectionView: UICollectionView!
+    @IBOutlet weak var weekdaysCollectionView: UICollectionView!
 
-    var collectionView: UICollectionView?
-    private let reuseIdentifier = "detailsCell"
+    private let detailsCellReuseIdentifier = "detailsCell"
+    private let weekdayCellReuseIdentifier = "weekdayCell"
 
     var viewModel: ChecklistDetailsViewModel?
+
+    var checklistTitleLabel: UILabel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setUpLabels()
+        configureNavBarTitle()
         setUpAppearance()
     }
 
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
 
-        self.collectionView?.collectionViewLayout.invalidateLayout()
+        self.daysCollectionView.collectionViewLayout.invalidateLayout()
+        self.weekdaysCollectionView.collectionViewLayout.invalidateLayout()
     }
 
     private func setUpAppearance() {
-        self.checklistNameLabel.font = UIFont.systemFont(ofSize: 23, weight: .light)
         self.motivationTextLabel.font = UIFont.systemFont(ofSize: 19, weight: .light)
         self.motivationTextLabel.textColor = .lightGray
     }
 
     private func setUpLabels() {
-        self.checklistNameLabel.text = self.viewModel?.checklist?.name
         self.motivationTextLabel.text = self.viewModel?.checklist?.motivationText
+    }
+
+    private func configureNavBarTitle() {
+        let checklistLabel = UILabel()
+
+        checklistLabel.lineBreakMode = .byTruncatingTail
+        checklistLabel.translatesAutoresizingMaskIntoConstraints = false
+        checklistLabel.font = UIFont.systemFont(ofSize: 21, weight: .semibold)
+        checklistLabel.textAlignment = .center
+
+        navigationItem.titleView = checklistLabel
+
+        checklistLabel.text = self.viewModel?.checklist?.name
     }
 
 }
 
 extension ChecklistDetailsViewController: UICollectionViewDelegate, UICollectionViewDataSource
 {
-
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.viewModel?.checklist?.numberOfDays ?? 30
+        if collectionView == self.daysCollectionView {
+            return self.viewModel?.checklist?.numberOfDays ?? 30
+        }
+        if collectionView == self.weekdaysCollectionView {
+            return DateFormatter.shortWeekdayNames.count
+        }
+
+        return 30
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        self.collectionView = collectionView
+        if collectionView == self.daysCollectionView {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.detailsCellReuseIdentifier, for: indexPath) as? ChecklistIconCell
 
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.reuseIdentifier, for: indexPath) as? ChecklistIconCell
+            let iconImage = UIImage(named: self.viewModel?.checklist?.icon ?? ChecklistIcon.universal.name)
+            cell?.iconImage.image = iconImage
+            cell?.numberOfDayLabel.text = String(indexPath.row + 1)
 
-        let iconImage = UIImage(named: self.viewModel?.checklist?.icon ?? ChecklistIcon.universal.name)
-        cell?.iconImage.image = iconImage
-        cell?.numberOfDayLabel.text = String(indexPath.row + 1)
+            if let dayIsCompleted = self.viewModel?.checklist?.completedDaysIndices.contains(indexPath.row), dayIsCompleted {
+                cell?.isHighlighted = true
+            }
 
-        if let dayIsCompleted = self.viewModel?.checklist?.completedDaysIndices.contains(indexPath.row), dayIsCompleted {
-            cell?.isHighlighted = true
+            return cell ?? UICollectionViewCell()
         }
 
-        return cell ?? UICollectionViewCell()
+        if collectionView == self.weekdaysCollectionView {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.weekdayCellReuseIdentifier, for: indexPath) as? WeekdayCell
+            cell?.weekdayTextLabel.text = DateFormatter.shortWeekdayNames[indexPath.row]
+            cell?.weekdayTextLabel.font = UIFont.systemFont(ofSize: 18, weight: .medium)
+            cell?.isUserInteractionEnabled = false
+
+            return cell ?? UICollectionViewCell()
+        }
+
+        return UICollectionViewCell()
     }
 
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("You selected cell #\(indexPath.item)!")
-        let cell = collectionView.cellForItem(at: indexPath)
-
-        guard let isDayCompleted = (self.viewModel?.checklist?.completedDaysIndices.contains(indexPath.row))  else { return }
-
-        cell?.isHighlighted = !isDayCompleted
-        let action: ChecklistDayAction = isDayCompleted ? .remove : .add
-
-        self.viewModel?.updatChecklistCompletedDays(dayIndex: indexPath.row, action: action)
+        if collectionView == self.daysCollectionView {
+            print("You selected cell #\(indexPath.item)!")
+            let cell = collectionView.cellForItem(at: indexPath)
+            
+            guard let isDayCompleted = (self.viewModel?.checklist?.completedDaysIndices.contains(indexPath.row))  else { return }
+            
+            cell?.isHighlighted = !isDayCompleted
+            let action: ChecklistDayAction = isDayCompleted ? .remove : .add
+            
+            self.viewModel?.updatChecklistCompletedDays(dayIndex: indexPath.row, action: action)
+        }
     }
 
 }
