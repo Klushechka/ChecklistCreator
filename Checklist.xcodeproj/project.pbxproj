@@ -43,7 +43,7 @@
 		3230728822F225A8002D0395 /* ChecklistTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChecklistTableViewCell.xib; sourceTree = "<group>"; };
 		3233C8C222F74AFF00914F7A /* ChecklistDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistDetailsViewController.swift; sourceTree = "<group>"; };
 		3233C8C422F74B1100914F7A /* ChecklistDetailsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChecklistDetailsViewController.storyboard; sourceTree = "<group>"; };
-		32425A1222A43654008349D0 /* Checklist creator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Checklist creator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		32425A1222A43654008349D0 /* ChecklistCreator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChecklistCreator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32425A1522A43654008349D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		32425A1C22A43656008349D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		32425A1F22A43656008349D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -130,7 +130,7 @@
 		32425A1322A43654008349D0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				32425A1222A43654008349D0 /* Checklist creator.app */,
+				32425A1222A43654008349D0 /* ChecklistCreator.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -194,9 +194,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		32425A1122A43654008349D0 /* Checklist creator */ = {
+		32425A1122A43654008349D0 /* Checklist */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 32425A2422A43656008349D0 /* Build configuration list for PBXNativeTarget "Checklist creator" */;
+			buildConfigurationList = 32425A2422A43656008349D0 /* Build configuration list for PBXNativeTarget "Checklist" */;
 			buildPhases = (
 				6C6DFC4C1AFFE77D040B7DC5 /* [CP] Check Pods Manifest.lock */,
 				32425A0E22A43654008349D0 /* Sources */,
@@ -208,9 +208,9 @@
 			);
 			dependencies = (
 			);
-			name = "Checklist creator";
+			name = Checklist;
 			productName = "Checklist creator";
-			productReference = 32425A1222A43654008349D0 /* Checklist creator.app */;
+			productReference = 32425A1222A43654008349D0 /* ChecklistCreator.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -228,7 +228,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 32425A0D22A43654008349D0 /* Build configuration list for PBXProject "Checklist creator" */;
+			buildConfigurationList = 32425A0D22A43654008349D0 /* Build configuration list for PBXProject "Checklist" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -241,7 +241,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				32425A1122A43654008349D0 /* Checklist creator */,
+				32425A1122A43654008349D0 /* Checklist */,
 			);
 		};
 /* End PBXProject section */
@@ -469,15 +469,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4TV82EX237;
+				DEVELOPMENT_TEAM = PTT8AW7PPX;
 				INFOPLIST_FILE = "$(SRCROOT)/List of checklist/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.klyushkina.ChecklistCreator;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.klyushkina.Checklist;
+				PRODUCT_NAME = ChecklistCreator;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -490,15 +490,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4TV82EX237;
+				DEVELOPMENT_TEAM = PTT8AW7PPX;
 				INFOPLIST_FILE = "$(SRCROOT)/List of checklist/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.klyushkina.ChecklistCreator;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.klyushkina.Checklist;
+				PRODUCT_NAME = ChecklistCreator;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -507,7 +507,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		32425A0D22A43654008349D0 /* Build configuration list for PBXProject "Checklist creator" */ = {
+		32425A0D22A43654008349D0 /* Build configuration list for PBXProject "Checklist" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				32425A2222A43656008349D0 /* Debug */,
@@ -516,7 +516,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		32425A2422A43656008349D0 /* Build configuration list for PBXNativeTarget "Checklist creator" */ = {
+		32425A2422A43656008349D0 /* Build configuration list for PBXNativeTarget "Checklist" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				32425A2522A43656008349D0 /* Debug */,
