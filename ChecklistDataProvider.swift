@@ -10,7 +10,7 @@ import Foundation
 import RealmSwift
 
 enum ChecklistDayAction: Int {
-    case add, remove
+    case markAsCompleted, markAsIncompleted
 }
 
 final class ChecklistDataProvider {
@@ -31,13 +31,13 @@ final class ChecklistDataProvider {
         }
     }
     
-    func getChecklists() -> [Checklist] {
+    func fetchChecklists() -> [Checklist] {
         let checklists = self.realm.objects(Checklist.self).sorted(byKeyPath: "timestamp", ascending: true)
         return checklists.map { $0 }
     }
     
     func deleteChecklist(with index: Int) {
-        let checklists = getChecklists()
+        let checklists = fetchChecklists()
         
         try? self.realm.write {
             self.realm.delete(checklists[index])
@@ -52,7 +52,9 @@ final class ChecklistDataProvider {
         return realm.objects(Checklist.self).filter("uuid = %@", uuid).first
     }
 
-    func updateChecklist(uuid: String, dayIndex: Int, action: ChecklistDayAction) {
+    func updateChecklist(uuid: String?, dayIndex: Int, action: ChecklistDayAction) {
+        guard let uuid = uuid else { return }
+        
         let realm = try! Realm()
 
         try! realm.write {
@@ -61,8 +63,8 @@ final class ChecklistDataProvider {
 
             let completedDaysIndices = checklist.completedDaysIndices
             switch action {
-            case .add: completedDaysIndices.append(dayIndex)
-            case .remove:
+            case .markAsCompleted: completedDaysIndices.append(dayIndex)
+            case .markAsIncompleted:
                 if completedDaysIndices.contains(dayIndex), let indexOfDay = completedDaysIndices.index(of: dayIndex) {
                     completedDaysIndices.remove(at: indexOfDay)
                 }

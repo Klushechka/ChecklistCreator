@@ -35,7 +35,7 @@ final class ListModel: ListViewModel {
     }
     
     func getChecklists() {
-        self.checklists = self.checklistDataProvider.getChecklists()
+        self.checklists = self.checklistDataProvider.fetchChecklists()
     }
     
     func deleteChecklist(with index: Int) {
