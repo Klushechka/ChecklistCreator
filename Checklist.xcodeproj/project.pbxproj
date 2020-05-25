@@ -10,7 +10,7 @@
 		0AEFD28872FD9212145C44BA /* Pods_ChecklistCreatorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EB67019BC08ED779B4867BC /* Pods_ChecklistCreatorTests.framework */; };
 		248138657C7815BA45F18B95 /* Pods_Checklist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9CD392DE972DB324CFD6576 /* Pods_Checklist.framework */; };
 		322D03F022C403E80040E25F /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322D03EF22C403E80040E25F /* NibLoadable.swift */; };
-		322D03F222C404FE0040E25F /* UIView extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322D03F122C404FE0040E25F /* UIView extension.swift */; };
+		322D03F222C404FE0040E25F /* UIView Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322D03F122C404FE0040E25F /* UIView Extension.swift */; };
 		322D03F922C40A880040E25F /* PlaceholderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 322D03F722C40A2B0040E25F /* PlaceholderView.xib */; };
 		3230728922F225A8002D0395 /* ChecklistTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3230728822F225A8002D0395 /* ChecklistTableViewCell.xib */; };
 		3233C8C322F74AFF00914F7A /* ChecklistDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3233C8C222F74AFF00914F7A /* ChecklistDetailsViewController.swift */; };
@@ -30,12 +30,12 @@
 		32A857BD22F21232000376F5 /* ChecklistTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A857BC22F21232000376F5 /* ChecklistTableView.swift */; };
 		32BC48A022CA851900C18814 /* Checklist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BC489F22CA851900C18814 /* Checklist.swift */; };
 		69170474245DA39F00DEAE06 /* WeekdayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69170473245DA39F00DEAE06 /* WeekdayCell.swift */; };
-		69170476245DDC1900DEAE06 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69170475245DDC1900DEAE06 /* DateFormatter.swift */; };
+		69170476245DDC1900DEAE06 /* DateFormatter Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69170475245DDC1900DEAE06 /* DateFormatter Extension.swift */; };
 		6941EAC0247591C900F858AF /* ChecklistDataProviderSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6941EABF247591C900F858AF /* ChecklistDataProviderSpec.swift */; };
 		69A1C7B5242FCA56005E82AD /* IconSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A1C7B4242FCA56005E82AD /* IconSelectionCell.swift */; };
 		69A1C7B7242FF95E005E82AD /* ChecklistIconCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A1C7B6242FF95E005E82AD /* ChecklistIconCell.swift */; };
 		69A9CA7C24280AFD00F3F47C /* ChecklistDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A9CA7B24280AFD00F3F47C /* ChecklistDetailsController.swift */; };
-		69A9CA7E24280C8300F3F47C /* ViewController extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A9CA7D24280C8300F3F47C /* ViewController extension.swift */; };
+		69A9CA7E24280C8300F3F47C /* UIViewController Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A9CA7D24280C8300F3F47C /* UIViewController Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,7 +51,7 @@
 /* Begin PBXFileReference section */
 		0901D7632146DE214199C969 /* Pods-Checklist.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Checklist.release.xcconfig"; path = "Pods/Target Support Files/Pods-Checklist/Pods-Checklist.release.xcconfig"; sourceTree = "<group>"; };
 		322D03EF22C403E80040E25F /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
-		322D03F122C404FE0040E25F /* UIView extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView extension.swift"; sourceTree = "<group>"; };
+		322D03F122C404FE0040E25F /* UIView Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView Extension.swift"; sourceTree = "<group>"; };
 		322D03F722C40A2B0040E25F /* PlaceholderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaceholderView.xib; sourceTree = "<group>"; };
 		3230728822F225A8002D0395 /* ChecklistTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChecklistTableViewCell.xib; sourceTree = "<group>"; };
 		3233C8C222F74AFF00914F7A /* ChecklistDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistDetailsViewController.swift; sourceTree = "<group>"; };
@@ -73,14 +73,14 @@
 		32A857BC22F21232000376F5 /* ChecklistTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistTableView.swift; sourceTree = "<group>"; };
 		32BC489F22CA851900C18814 /* Checklist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checklist.swift; sourceTree = "<group>"; };
 		69170473245DA39F00DEAE06 /* WeekdayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekdayCell.swift; sourceTree = "<group>"; };
-		69170475245DDC1900DEAE06 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
+		69170475245DDC1900DEAE06 /* DateFormatter Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter Extension.swift"; sourceTree = "<group>"; };
 		6941EABD247591C900F858AF /* ChecklistCreatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChecklistCreatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6941EABF247591C900F858AF /* ChecklistDataProviderSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistDataProviderSpec.swift; sourceTree = "<group>"; };
 		6941EAC1247591C900F858AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		69A1C7B4242FCA56005E82AD /* IconSelectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconSelectionCell.swift; sourceTree = "<group>"; };
 		69A1C7B6242FF95E005E82AD /* ChecklistIconCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistIconCell.swift; sourceTree = "<group>"; };
 		69A9CA7B24280AFD00F3F47C /* ChecklistDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistDetailsController.swift; sourceTree = "<group>"; };
-		69A9CA7D24280C8300F3F47C /* ViewController extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController extension.swift"; sourceTree = "<group>"; };
+		69A9CA7D24280C8300F3F47C /* UIViewController Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController Extension.swift"; sourceTree = "<group>"; };
 		8EB67019BC08ED779B4867BC /* Pods_ChecklistCreatorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChecklistCreatorTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CD92D1158343D47264D8955 /* Pods-Checklist creator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Checklist creator.release.xcconfig"; path = "Pods/Target Support Files/Pods-Checklist creator/Pods-Checklist creator.release.xcconfig"; sourceTree = "<group>"; };
 		A452CCFC4AAC41EAFD43C9AF /* Pods-ChecklistCreatorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChecklistCreatorTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChecklistCreatorTests/Pods-ChecklistCreatorTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -123,14 +123,14 @@
 			isa = PBXGroup;
 			children = (
 				322D03EF22C403E80040E25F /* NibLoadable.swift */,
-				322D03F122C404FE0040E25F /* UIView extension.swift */,
-				69A9CA7D24280C8300F3F47C /* ViewController extension.swift */,
-				69170475245DDC1900DEAE06 /* DateFormatter.swift */,
+				322D03F122C404FE0040E25F /* UIView Extension.swift */,
+				69A9CA7D24280C8300F3F47C /* UIViewController Extension.swift */,
+				69170475245DDC1900DEAE06 /* DateFormatter Extension.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
 		};
-		3233C8C122F74AD700914F7A /* Checklist details */ = {
+		3233C8C122F74AD700914F7A /* Checklist Details */ = {
 			isa = PBXGroup;
 			children = (
 				3233C8C222F74AFF00914F7A /* ChecklistDetailsViewController.swift */,
@@ -139,16 +139,17 @@
 				69A1C7B6242FF95E005E82AD /* ChecklistIconCell.swift */,
 				69170473245DA39F00DEAE06 /* WeekdayCell.swift */,
 			);
-			path = "Checklist details";
+			path = "Checklist Details";
 			sourceTree = "<group>";
 		};
 		32425A0922A43654008349D0 = {
 			isa = PBXGroup;
 			children = (
-				3233C8C122F74AD700914F7A /* Checklist details */,
-				32BC48A422CA868700C18814 /* Checklist */,
-				32425A1422A43654008349D0 /* List of checklist */,
-				32425A3922A446FC008349D0 /* Checklist creator */,
+				32425A1522A43654008349D0 /* AppDelegate.swift */,
+				32425A1E22A43656008349D0 /* LaunchScreen.storyboard */,
+				32425A1C22A43656008349D0 /* Assets.xcassets */,
+				32425A2122A43656008349D0 /* Info.plist */,
+				69A51EC3247C757B0079CE29 /* Modules */,
 				322D03EE22C403CF0040E25F /* Utils */,
 				6941EABE247591C900F858AF /* ChecklistCreatorTests */,
 				32425A1322A43654008349D0 /* Products */,
@@ -166,7 +167,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		32425A1422A43654008349D0 /* List of checklist */ = {
+		32425A1422A43654008349D0 /* Checklists List */ = {
 			isa = PBXGroup;
 			children = (
 				32425A3522A43B9E008349D0 /* ListViewController.swift */,
@@ -177,15 +178,11 @@
 				3230728822F225A8002D0395 /* ChecklistTableViewCell.xib */,
 				322D03F722C40A2B0040E25F /* PlaceholderView.xib */,
 				327B4CB522C3E940003ADB35 /* PlaceholderView.swift */,
-				32425A1522A43654008349D0 /* AppDelegate.swift */,
-				32425A1C22A43656008349D0 /* Assets.xcassets */,
-				32425A1E22A43656008349D0 /* LaunchScreen.storyboard */,
-				32425A2122A43656008349D0 /* Info.plist */,
 			);
-			path = "List of checklist";
+			path = "Checklists List";
 			sourceTree = "<group>";
 		};
-		32425A3922A446FC008349D0 /* Checklist creator */ = {
+		32425A3922A446FC008349D0 /* New Checklist */ = {
 			isa = PBXGroup;
 			children = (
 				69A1C7A9242FB377005E82AD /* IconSelectionCollectionView */,
@@ -193,7 +190,7 @@
 				32425A3C22A44732008349D0 /* CreateChecklistViewController.swift */,
 				32425A3E22A44745008349D0 /* CreateChecklistModel.swift */,
 			);
-			path = "Checklist creator";
+			path = "New Checklist";
 			sourceTree = "<group>";
 		};
 		32BC48A422CA868700C18814 /* Checklist */ = {
@@ -203,6 +200,7 @@
 				3255C4E122EE100B00863C0F /* ChecklistDataProvider.swift */,
 			);
 			name = Checklist;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		67FF49AA59097F8E7D306B02 /* Pods */ = {
@@ -233,6 +231,17 @@
 				69A1C7B4242FCA56005E82AD /* IconSelectionCell.swift */,
 			);
 			path = IconSelectionCollectionView;
+			sourceTree = "<group>";
+		};
+		69A51EC3247C757B0079CE29 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				32425A3922A446FC008349D0 /* New Checklist */,
+				32BC48A422CA868700C18814 /* Checklist */,
+				3233C8C122F74AD700914F7A /* Checklist Details */,
+				32425A1422A43654008349D0 /* Checklists List */,
+			);
+			path = Modules;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -428,9 +437,9 @@
 				69A1C7B7242FF95E005E82AD /* ChecklistIconCell.swift in Sources */,
 				32425A3F22A44745008349D0 /* CreateChecklistModel.swift in Sources */,
 				32425A3D22A44732008349D0 /* CreateChecklistViewController.swift in Sources */,
-				69A9CA7E24280C8300F3F47C /* ViewController extension.swift in Sources */,
+				69A9CA7E24280C8300F3F47C /* UIViewController Extension.swift in Sources */,
 				69170474245DA39F00DEAE06 /* WeekdayCell.swift in Sources */,
-				69170476245DDC1900DEAE06 /* DateFormatter.swift in Sources */,
+				69170476245DDC1900DEAE06 /* DateFormatter Extension.swift in Sources */,
 				32BC48A022CA851900C18814 /* Checklist.swift in Sources */,
 				322D03F022C403E80040E25F /* NibLoadable.swift in Sources */,
 				3285D2D222C3D76F00356786 /* ListModel.swift in Sources */,
@@ -443,7 +452,7 @@
 				32425A1622A43654008349D0 /* AppDelegate.swift in Sources */,
 				327B4CB622C3E940003ADB35 /* PlaceholderView.swift in Sources */,
 				69A9CA7C24280AFD00F3F47C /* ChecklistDetailsController.swift in Sources */,
-				322D03F222C404FE0040E25F /* UIView extension.swift in Sources */,
+				322D03F222C404FE0040E25F /* UIView Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
