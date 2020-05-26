@@ -1,4 +1,5 @@
 PODS:
+  - Nimble (8.0.9)
   - Realm (4.3.2):
     - Realm/Headers (= 4.3.2)
   - Realm/Headers (4.3.2)
@@ -7,20 +8,23 @@ PODS:
   - SnapKit (5.0.1)
 
 DEPENDENCIES:
+  - Nimble
   - RealmSwift
   - SnapKit
 
 SPEC REPOS:
   trunk:
+    - Nimble
     - Realm
     - RealmSwift
     - SnapKit
 
 SPEC CHECKSUMS:
+  Nimble: 98b888285a615fd34f20e61753cf58ea1402bde4
   Realm: 5e92902e2875dff4bb0fd02f67bb737c3d5db2bc
   RealmSwift: 9a360fc7bae04fc2e308a34fbd899d5faa2d6b22
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 
-PODFILE CHECKSUM: 66273423d3a9b204344dd743def0fa5edd0c6698
+PODFILE CHECKSUM: 69d0f33456e6b1376fff145cd38269f7b18223bf
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.9.1

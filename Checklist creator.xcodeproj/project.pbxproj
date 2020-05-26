@@ -34,7 +34,19 @@
 		69A1C7B7242FF95E005E82AD /* ChecklistIconCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A1C7B6242FF95E005E82AD /* ChecklistIconCell.swift */; };
 		69A9CA7C24280AFD00F3F47C /* ChecklistDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A9CA7B24280AFD00F3F47C /* ChecklistDetailsController.swift */; };
 		69A9CA7E24280C8300F3F47C /* ViewController extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A9CA7D24280C8300F3F47C /* ViewController extension.swift */; };
+		69B6A826247CFECF00CF619F /* ChecklistDataProviderSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B6A825247CFECF00CF619F /* ChecklistDataProviderSpec.swift */; };
+		F373998B527B4E2FC44DBAC3 /* Pods_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA525767639088E3F41C17C8 /* Pods_Tests.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		69B6A828247CFECF00CF619F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 32425A0A22A43654008349D0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 32425A1122A43654008349D0;
+			remoteInfo = "Checklist creator";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		322D03EF22C403E80040E25F /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
@@ -59,6 +71,7 @@
 		32A857B822F20657000376F5 /* ChecklistTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistTableViewCell.swift; sourceTree = "<group>"; };
 		32A857BC22F21232000376F5 /* ChecklistTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistTableView.swift; sourceTree = "<group>"; };
 		32BC489F22CA851900C18814 /* Checklist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checklist.swift; sourceTree = "<group>"; };
+		4F6F1CB47B7C8EF56A5C29AB /* Pods-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tests/Pods-Tests.release.xcconfig"; sourceTree = "<group>"; };
 		68693E60595D8E69EC5476EE /* Pods_Checklist_creator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Checklist_creator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		69170473245DA39F00DEAE06 /* WeekdayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekdayCell.swift; sourceTree = "<group>"; };
 		69170475245DDC1900DEAE06 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
@@ -66,7 +79,12 @@
 		69A1C7B6242FF95E005E82AD /* ChecklistIconCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistIconCell.swift; sourceTree = "<group>"; };
 		69A9CA7B24280AFD00F3F47C /* ChecklistDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistDetailsController.swift; sourceTree = "<group>"; };
 		69A9CA7D24280C8300F3F47C /* ViewController extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController extension.swift"; sourceTree = "<group>"; };
+		69B6A823247CFECF00CF619F /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		69B6A825247CFECF00CF619F /* ChecklistDataProviderSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistDataProviderSpec.swift; sourceTree = "<group>"; };
+		69B6A827247CFECF00CF619F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9CD92D1158343D47264D8955 /* Pods-Checklist creator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Checklist creator.release.xcconfig"; path = "Pods/Target Support Files/Pods-Checklist creator/Pods-Checklist creator.release.xcconfig"; sourceTree = "<group>"; };
+		BA525767639088E3F41C17C8 /* Pods_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BAA7DE36E27949B50F4FD632 /* Pods-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tests/Pods-Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		E0B08EB564652DA9C9CA11C5 /* Pods-Checklist creator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Checklist creator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Checklist creator/Pods-Checklist creator.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -79,6 +97,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		69B6A820247CFECF00CF619F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F373998B527B4E2FC44DBAC3 /* Pods_Tests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -86,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				68693E60595D8E69EC5476EE /* Pods_Checklist_creator.framework */,
+				BA525767639088E3F41C17C8 /* Pods_Tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -121,6 +148,7 @@
 				32425A1422A43654008349D0 /* List of checklist */,
 				32425A3922A446FC008349D0 /* Checklist creator */,
 				322D03EE22C403CF0040E25F /* Utils */,
+				69B6A824247CFECF00CF619F /* Tests */,
 				32425A1322A43654008349D0 /* Products */,
 				67FF49AA59097F8E7D306B02 /* Pods */,
 				03166C4B4CB4467075811A09 /* Frameworks */,
@@ -131,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				32425A1222A43654008349D0 /* Checklist creator.app */,
+				69B6A823247CFECF00CF619F /* Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -179,6 +208,8 @@
 			children = (
 				E0B08EB564652DA9C9CA11C5 /* Pods-Checklist creator.debug.xcconfig */,
 				9CD92D1158343D47264D8955 /* Pods-Checklist creator.release.xcconfig */,
+				BAA7DE36E27949B50F4FD632 /* Pods-Tests.debug.xcconfig */,
+				4F6F1CB47B7C8EF56A5C29AB /* Pods-Tests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -189,6 +220,15 @@
 				69A1C7B4242FCA56005E82AD /* IconSelectionCell.swift */,
 			);
 			path = IconSelectionCollectionView;
+			sourceTree = "<group>";
+		};
+		69B6A824247CFECF00CF619F /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				69B6A825247CFECF00CF619F /* ChecklistDataProviderSpec.swift */,
+				69B6A827247CFECF00CF619F /* Info.plist */,
+			);
+			path = Tests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,18 +253,42 @@
 			productReference = 32425A1222A43654008349D0 /* Checklist creator.app */;
 			productType = "com.apple.product-type.application";
 		};
+		69B6A822247CFECF00CF619F /* Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 69B6A82C247CFECF00CF619F /* Build configuration list for PBXNativeTarget "Tests" */;
+			buildPhases = (
+				E3B20E8398515E13948E9FF4 /* [CP] Check Pods Manifest.lock */,
+				69B6A81F247CFECF00CF619F /* Sources */,
+				69B6A820247CFECF00CF619F /* Frameworks */,
+				69B6A821247CFECF00CF619F /* Resources */,
+				B881E869F8D01CFB61F2AC08 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				69B6A829247CFECF00CF619F /* PBXTargetDependency */,
+			);
+			name = Tests;
+			productName = Tests;
+			productReference = 69B6A823247CFECF00CF619F /* Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		32425A0A22A43654008349D0 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1020;
+				LastSwiftUpdateCheck = 1140;
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = klyushkina;
 				TargetAttributes = {
 					32425A1122A43654008349D0 = {
 						CreatedOnToolsVersion = 10.2;
+					};
+					69B6A822247CFECF00CF619F = {
+						CreatedOnToolsVersion = 11.4.1;
+						TestTargetID = 32425A1122A43654008349D0;
 					};
 				};
 			};
@@ -242,6 +306,7 @@
 			projectRoot = "";
 			targets = (
 				32425A1122A43654008349D0 /* Checklist creator */,
+				69B6A822247CFECF00CF619F /* Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -258,6 +323,13 @@
 				32425A3222A437A2008349D0 /* ListViewController.storyboard in Resources */,
 				32425A1D22A43656008349D0 /* Assets.xcassets in Resources */,
 				3233C8C522F74B1100914F7A /* ChecklistDetailsViewController.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		69B6A821247CFECF00CF619F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +352,45 @@
 			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-Checklist creator-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B881E869F8D01CFB61F2AC08 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Tests/Pods-Tests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Tests/Pods-Tests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Tests/Pods-Tests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E3B20E8398515E13948E9FF4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Tests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -332,7 +443,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		69B6A81F247CFECF00CF619F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				69B6A826247CFECF00CF619F /* ChecklistDataProviderSpec.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		69B6A829247CFECF00CF619F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 32425A1122A43654008349D0 /* Checklist creator */;
+			targetProxy = 69B6A828247CFECF00CF619F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		32425A1E22A43656008349D0 /* LaunchScreen.storyboard */ = {
@@ -504,6 +631,50 @@
 			};
 			name = Release;
 		};
+		69B6A82A247CFECF00CF619F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BAA7DE36E27949B50F4FD632 /* Pods-Tests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PTT8AW7PPX;
+				INFOPLIST_FILE = Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = oklyushkina.Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Checklist creator.app/Checklist creator";
+			};
+			name = Debug;
+		};
+		69B6A82B247CFECF00CF619F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F6F1CB47B7C8EF56A5C29AB /* Pods-Tests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PTT8AW7PPX;
+				INFOPLIST_FILE = Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = oklyushkina.Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Checklist creator.app/Checklist creator";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -521,6 +692,15 @@
 			buildConfigurations = (
 				32425A2522A43656008349D0 /* Debug */,
 				32425A2622A43656008349D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		69B6A82C247CFECF00CF619F /* Build configuration list for PBXNativeTarget "Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				69B6A82A247CFECF00CF619F /* Debug */,
+				69B6A82B247CFECF00CF619F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

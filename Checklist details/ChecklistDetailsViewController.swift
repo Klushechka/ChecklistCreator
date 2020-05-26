@@ -119,7 +119,7 @@ extension ChecklistDetailsViewController: UICollectionViewDelegate, UICollection
             guard let isDayCompleted = (self.viewModel?.checklist?.completedDaysIndices.contains(indexPath.row))  else { return }
             
             cell?.isHighlighted = !isDayCompleted
-            let action: ChecklistDayAction = isDayCompleted ? .remove : .add
+            let action: ChecklistDayAction = isDayCompleted ? .markAsIncompleted : .markAsCompleted
             
             self.viewModel?.updatChecklistCompletedDays(dayIndex: indexPath.row, action: action)
         }
