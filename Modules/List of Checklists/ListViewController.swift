@@ -92,8 +92,11 @@ final class ListViewController: UIViewController {
     }
     
     func setAddChecklistCallback() {
-        guard let placeholderView = self.placeholderView else { print ("Fail 1")
-            return }
+        guard let placeholderView = self.placeholderView else {
+            assertionFailure("Placeholder view should not be nil")
+            
+            return
+        }
         
         placeholderView.addChecklistTapped = {
             self.presentAddChecklistVC()
@@ -209,6 +212,7 @@ private extension ListViewController {
 
     func deleteChecklistCallback() {
         guard let checklistTableView = self.checklistTableView else { return }
+        
         checklistTableView.checklistDeletiongInitiated = { index in
             self.showChecklistDeletionAlert(forCellWith: index)
         }

@@ -40,6 +40,7 @@ final class ListModel: ListViewModel {
     
     func deleteChecklist(with index: Int) {
         self.checklistDataProvider.deleteChecklist(with: index)
+        
         getChecklists()
     }
 }
