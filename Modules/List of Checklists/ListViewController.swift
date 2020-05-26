@@ -188,15 +188,12 @@ private extension ListViewController {
 private extension ListViewController {
 
     func showChecklistDeletionAlert(forCellWith index: Int) {
-        let alert = UIAlertController(title: "Delete Checklist", message: "Are you sure you want to delete this checklist?", preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: {(action:UIAlertAction!) in
-
+        let alert = UIAlertController(title: "Do you want to delete this checklist?", message: "You cannot undo this action.", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Delete", style: UIAlertAction.Style.destructive, handler: {(action:UIAlertAction!) in
             self.deleteChecklist(with: index)
-
-            print("Action")
         }))
-        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: nil))
-
+        
         self.present(alert, animated: true, completion: nil)
     }
 
