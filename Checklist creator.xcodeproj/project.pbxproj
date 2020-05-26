@@ -33,7 +33,7 @@
 		69A1C7B5242FCA56005E82AD /* IconSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A1C7B4242FCA56005E82AD /* IconSelectionCell.swift */; };
 		69A1C7B7242FF95E005E82AD /* ChecklistIconCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A1C7B6242FF95E005E82AD /* ChecklistIconCell.swift */; };
 		69A9CA7C24280AFD00F3F47C /* ChecklistDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A9CA7B24280AFD00F3F47C /* ChecklistDetailsController.swift */; };
-		69A9CA7E24280C8300F3F47C /* ViewController extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A9CA7D24280C8300F3F47C /* ViewController extension.swift */; };
+		69A9CA7E24280C8300F3F47C /* UIViewController extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A9CA7D24280C8300F3F47C /* UIViewController extension.swift */; };
 		69B6A826247CFECF00CF619F /* ChecklistDataProviderSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B6A825247CFECF00CF619F /* ChecklistDataProviderSpec.swift */; };
 		F373998B527B4E2FC44DBAC3 /* Pods_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA525767639088E3F41C17C8 /* Pods_Tests.framework */; };
 /* End PBXBuildFile section */
@@ -78,7 +78,7 @@
 		69A1C7B4242FCA56005E82AD /* IconSelectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconSelectionCell.swift; sourceTree = "<group>"; };
 		69A1C7B6242FF95E005E82AD /* ChecklistIconCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistIconCell.swift; sourceTree = "<group>"; };
 		69A9CA7B24280AFD00F3F47C /* ChecklistDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistDetailsController.swift; sourceTree = "<group>"; };
-		69A9CA7D24280C8300F3F47C /* ViewController extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController extension.swift"; sourceTree = "<group>"; };
+		69A9CA7D24280C8300F3F47C /* UIViewController extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController extension.swift"; sourceTree = "<group>"; };
 		69B6A823247CFECF00CF619F /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		69B6A825247CFECF00CF619F /* ChecklistDataProviderSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistDataProviderSpec.swift; sourceTree = "<group>"; };
 		69B6A827247CFECF00CF619F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -122,13 +122,13 @@
 			children = (
 				322D03EF22C403E80040E25F /* NibLoadable.swift */,
 				322D03F122C404FE0040E25F /* UIView extension.swift */,
-				69A9CA7D24280C8300F3F47C /* ViewController extension.swift */,
+				69A9CA7D24280C8300F3F47C /* UIViewController extension.swift */,
 				69170475245DDC1900DEAE06 /* DateFormatter.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
 		};
-		3233C8C122F74AD700914F7A /* Checklist details */ = {
+		3233C8C122F74AD700914F7A /* Checklist Details */ = {
 			isa = PBXGroup;
 			children = (
 				3233C8C222F74AFF00914F7A /* ChecklistDetailsViewController.swift */,
@@ -137,16 +137,13 @@
 				69A1C7B6242FF95E005E82AD /* ChecklistIconCell.swift */,
 				69170473245DA39F00DEAE06 /* WeekdayCell.swift */,
 			);
-			path = "Checklist details";
+			path = "Checklist Details";
 			sourceTree = "<group>";
 		};
 		32425A0922A43654008349D0 = {
 			isa = PBXGroup;
 			children = (
-				3233C8C122F74AD700914F7A /* Checklist details */,
-				32BC48A422CA868700C18814 /* Checklist */,
-				32425A1422A43654008349D0 /* List of checklist */,
-				32425A3922A446FC008349D0 /* Checklist creator */,
+				699C1CC3247D105800DB851E /* Modules */,
 				322D03EE22C403CF0040E25F /* Utils */,
 				69B6A824247CFECF00CF619F /* Tests */,
 				32425A1322A43654008349D0 /* Products */,
@@ -164,7 +161,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		32425A1422A43654008349D0 /* List of checklist */ = {
+		32425A1422A43654008349D0 /* List of Checklists */ = {
 			isa = PBXGroup;
 			children = (
 				32425A3522A43B9E008349D0 /* ListViewController.swift */,
@@ -180,10 +177,10 @@
 				32425A1E22A43656008349D0 /* LaunchScreen.storyboard */,
 				32425A2122A43656008349D0 /* Info.plist */,
 			);
-			path = "List of checklist";
+			path = "List of Checklists";
 			sourceTree = "<group>";
 		};
-		32425A3922A446FC008349D0 /* Checklist creator */ = {
+		32425A3922A446FC008349D0 /* New Checklist */ = {
 			isa = PBXGroup;
 			children = (
 				69A1C7A9242FB377005E82AD /* IconSelectionCollectionView */,
@@ -191,7 +188,7 @@
 				32425A3C22A44732008349D0 /* CreateChecklistViewController.swift */,
 				32425A3E22A44745008349D0 /* CreateChecklistModel.swift */,
 			);
-			path = "Checklist creator";
+			path = "New Checklist";
 			sourceTree = "<group>";
 		};
 		32BC48A422CA868700C18814 /* Checklist */ = {
@@ -201,6 +198,7 @@
 				3255C4E122EE100B00863C0F /* ChecklistDataProvider.swift */,
 			);
 			name = Checklist;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		67FF49AA59097F8E7D306B02 /* Pods */ = {
@@ -212,6 +210,17 @@
 				4F6F1CB47B7C8EF56A5C29AB /* Pods-Tests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		699C1CC3247D105800DB851E /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				3233C8C122F74AD700914F7A /* Checklist Details */,
+				32BC48A422CA868700C18814 /* Checklist */,
+				32425A1422A43654008349D0 /* List of Checklists */,
+				32425A3922A446FC008349D0 /* New Checklist */,
+			);
+			path = Modules;
 			sourceTree = "<group>";
 		};
 		69A1C7A9242FB377005E82AD /* IconSelectionCollectionView */ = {
@@ -424,7 +433,7 @@
 				69A1C7B7242FF95E005E82AD /* ChecklistIconCell.swift in Sources */,
 				32425A3F22A44745008349D0 /* CreateChecklistModel.swift in Sources */,
 				32425A3D22A44732008349D0 /* CreateChecklistViewController.swift in Sources */,
-				69A9CA7E24280C8300F3F47C /* ViewController extension.swift in Sources */,
+				69A9CA7E24280C8300F3F47C /* UIViewController extension.swift in Sources */,
 				69170474245DA39F00DEAE06 /* WeekdayCell.swift in Sources */,
 				69170476245DDC1900DEAE06 /* DateFormatter.swift in Sources */,
 				32BC48A022CA851900C18814 /* Checklist.swift in Sources */,
@@ -597,7 +606,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4TV82EX237;
-				INFOPLIST_FILE = "$(SRCROOT)/List of checklist/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Modules/List of Checklists/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -618,7 +627,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4TV82EX237;
-				INFOPLIST_FILE = "$(SRCROOT)/List of checklist/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Modules/List of Checklists/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
