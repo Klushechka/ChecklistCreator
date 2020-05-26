@@ -47,9 +47,10 @@ final class CreateChecklistViewController: UIViewController {
         self.viewModel = CreateChecklistModel()
         
         configureUI()
-        monitorTextEditing()
-
         setPickerView()
+        
+        monitorTextEditing()
+        becomeTextFieldsDelegate()
     }
     
     private func configureUI() {
@@ -91,17 +92,38 @@ final class CreateChecklistViewController: UIViewController {
     }
 }
 
-extension CreateChecklistViewController {
+private extension CreateChecklistViewController {
 
-    private func monitorTextEditing() {
+    func monitorTextEditing() {
         self.checklistTitleTextField.addTarget(self, action: #selector(enableDoneButton), for: UIControl.Event.editingChanged)
     }
 
-    @objc private func enableDoneButton() {
+    @objc func enableDoneButton() {
         guard let checklistTitleText = self.checklistTitleTextField.text else { return }
 
         self.doneButton.isEnabled = !checklistTitleText.isEmpty
     }
+    
+}
+
+extension CreateChecklistViewController: UITextFieldDelegate {
+    
+    func becomeTextFieldsDelegate() {
+        self.checklistTitleTextField.delegate = self
+        self.motivationTextField.delegate = self
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == self.checklistTitleTextField {
+            self.motivationTextField.becomeFirstResponder()
+        }
+        else if textField == self.motivationTextField {
+            self.motivationTextField.resignFirstResponder()
+        }
+        
+        return true
+    }
+    
 }
 
 extension CreateChecklistViewController: UICollectionViewDelegate, UICollectionViewDataSource
@@ -186,8 +208,5 @@ extension CreateChecklistViewController: UIPickerViewDelegate, UIPickerViewDataS
 
         self.view.endEditing(true)
     }
-
-
-
-
+    
 }
