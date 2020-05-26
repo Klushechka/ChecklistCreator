@@ -11,31 +11,41 @@ import UIKit
 
 final class BorderlessTextField: UITextField {
     
+    private var bottomLineLayer: CALayer?
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        showBottomLine()
         decorateTextField()
     }
     
     required init?(coder aDecoder: NSCoder) {
        super.init(coder: aDecoder)
         
-        showBottomLine()
         decorateTextField()
     }
     
-    private func showBottomLine() {
-        let bottomLine = CALayer()
-        bottomLine.frame = CGRect(x: 0.0, y: self.bounds.height - 1, width: self.bounds.width, height: 0.5)
-        bottomLine.backgroundColor = UIColor.lightGray.cgColor
+    override func layoutSubviews() {
+        super.layoutSubviews()
         
-        self.borderStyle = UITextField.BorderStyle.none
-        self.layer.addSublayer(bottomLine)
+        setBottomLine()
     }
     
     private func decorateTextField() {
         self.font = UIFont.systemFont(ofSize: 17, weight: .light)
+    }
+    
+    private func setBottomLine() {
+        self.bottomLineLayer?.removeFromSuperlayer()
+        
+        let bottomLine = CALayer()
+        bottomLine.frame = CGRect(x: 0.0, y: self.frame.height - 1, width: self.frame.width, height: 0.5)
+        bottomLine.backgroundColor = UIColor.lightGray.cgColor
+        
+        self.borderStyle = UITextField.BorderStyle.none
+        self.layer.addSublayer(bottomLine)
+        
+        self.bottomLineLayer = bottomLine
     }
     
 }
