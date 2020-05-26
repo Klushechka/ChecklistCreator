@@ -20,36 +20,36 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0s8-WP-VG6" userLabel="ContainerView">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Checklist Title Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KHH-4A-zis">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Checklist Title Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KHH-4A-zis" customClass="TitleLabel" customModule="Checklist_creator" customModuleProvider="target">
                                         <rect key="frame" x="15" y="15" width="384" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="OxQ-XA-BmN">
+                                    <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="OxQ-XA-BmN" customClass="BorderlessTextField" customModule="Checklist_creator" customModuleProvider="target">
                                         <rect key="frame" x="15" y="46" width="384" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Motivation Text Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c2X-vR-CGd">
-                                        <rect key="frame" x="15" y="95" width="384" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Motivation Text Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c2X-vR-CGd" customClass="TitleLabel" customModule="Checklist_creator" customModuleProvider="target">
+                                        <rect key="frame" x="15" y="105" width="384" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="lld-St-sa6">
-                                        <rect key="frame" x="15" y="126" width="384" height="34"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="lld-St-sa6" userLabel="Motivation Text Field" customClass="BorderlessTextField" customModule="Checklist_creator" customModuleProvider="target">
+                                        <rect key="frame" x="15" y="136" width="384" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Icon Text Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YrY-Ze-AFj">
-                                        <rect key="frame" x="15" y="180" width="384" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Icon Text Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YrY-Ze-AFj" customClass="TitleLabel" customModule="Checklist_creator" customModuleProvider="target">
+                                        <rect key="frame" x="15" y="195" width="384" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <collectionView clipsSubviews="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qk2-2D-u5w">
-                                        <rect key="frame" x="15" y="221" width="384" height="150"/>
+                                        <rect key="frame" x="15" y="236" width="384" height="150"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="150" id="2Wz-jU-ssJ"/>
@@ -90,8 +90,8 @@
                                             <outlet property="delegate" destination="Arg-KZ-b1T" id="pKy-98-1LR"/>
                                         </connections>
                                     </collectionView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose the day to start" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LuJ-ad-905">
-                                        <rect key="frame" x="15" y="386" width="384" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose the day to start" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LuJ-ad-905" customClass="TitleLabel" customModule="Checklist_creator" customModuleProvider="target">
+                                        <rect key="frame" x="15" y="401" width="384" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -99,24 +99,24 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstItem="YrY-Ze-AFj" firstAttribute="leading" secondItem="0s8-WP-VG6" secondAttribute="leading" constant="15" id="26Y-f9-5Uy"/>
-                                    <constraint firstItem="c2X-vR-CGd" firstAttribute="top" secondItem="OxQ-XA-BmN" secondAttribute="bottom" constant="15" id="2S1-rC-ocJ"/>
+                                    <constraint firstItem="YrY-Ze-AFj" firstAttribute="trailing" secondItem="KHH-4A-zis" secondAttribute="trailing" id="0c5-2Y-uGi"/>
+                                    <constraint firstItem="c2X-vR-CGd" firstAttribute="top" secondItem="OxQ-XA-BmN" secondAttribute="bottom" constant="25" id="2S1-rC-ocJ"/>
                                     <constraint firstItem="OxQ-XA-BmN" firstAttribute="trailing" secondItem="KHH-4A-zis" secondAttribute="trailing" id="3xy-V2-25U"/>
-                                    <constraint firstItem="YrY-Ze-AFj" firstAttribute="top" secondItem="lld-St-sa6" secondAttribute="bottom" constant="20" id="4Jv-La-Cwd"/>
+                                    <constraint firstItem="YrY-Ze-AFj" firstAttribute="top" secondItem="lld-St-sa6" secondAttribute="bottom" constant="25" id="4Jv-La-Cwd"/>
                                     <constraint firstItem="lld-St-sa6" firstAttribute="top" secondItem="c2X-vR-CGd" secondAttribute="bottom" constant="10" id="4xC-dU-Dxf"/>
                                     <constraint firstItem="lld-St-sa6" firstAttribute="trailing" secondItem="c2X-vR-CGd" secondAttribute="trailing" id="8BF-fL-XGk"/>
+                                    <constraint firstItem="LuJ-ad-905" firstAttribute="trailing" secondItem="KHH-4A-zis" secondAttribute="trailing" id="CxP-xv-jy0"/>
                                     <constraint firstAttribute="trailing" secondItem="KHH-4A-zis" secondAttribute="trailing" constant="15" id="FHp-Fn-pl9"/>
                                     <constraint firstItem="qk2-2D-u5w" firstAttribute="top" secondItem="YrY-Ze-AFj" secondAttribute="bottom" constant="20" id="KaX-oG-Sff"/>
-                                    <constraint firstItem="LuJ-ad-905" firstAttribute="leading" secondItem="0s8-WP-VG6" secondAttribute="leading" constant="15" id="MFQ-GY-PXg"/>
                                     <constraint firstItem="c2X-vR-CGd" firstAttribute="trailing" secondItem="KHH-4A-zis" secondAttribute="trailing" id="Opf-s0-qmu"/>
+                                    <constraint firstItem="qk2-2D-u5w" firstAttribute="leading" secondItem="KHH-4A-zis" secondAttribute="leading" id="UOK-qO-gTJ"/>
+                                    <constraint firstItem="YrY-Ze-AFj" firstAttribute="leading" secondItem="KHH-4A-zis" secondAttribute="leading" id="XTE-6x-QJR"/>
                                     <constraint firstItem="KHH-4A-zis" firstAttribute="top" secondItem="0s8-WP-VG6" secondAttribute="top" constant="15" id="baI-X8-wAS"/>
                                     <constraint firstItem="KHH-4A-zis" firstAttribute="leading" secondItem="0s8-WP-VG6" secondAttribute="leading" constant="15" id="deS-mY-N9r"/>
-                                    <constraint firstAttribute="trailing" secondItem="LuJ-ad-905" secondAttribute="trailing" constant="15" id="g6h-5W-qXF"/>
                                     <constraint firstItem="LuJ-ad-905" firstAttribute="top" secondItem="qk2-2D-u5w" secondAttribute="bottom" constant="15" id="ggu-V0-6XJ"/>
-                                    <constraint firstAttribute="trailing" secondItem="YrY-Ze-AFj" secondAttribute="trailing" constant="15" id="l08-qN-26b"/>
-                                    <constraint firstItem="qk2-2D-u5w" firstAttribute="leading" secondItem="0s8-WP-VG6" secondAttribute="leading" constant="15" id="pRr-Od-QRd"/>
+                                    <constraint firstItem="LuJ-ad-905" firstAttribute="leading" secondItem="KHH-4A-zis" secondAttribute="leading" id="n6E-W0-HVc"/>
+                                    <constraint firstItem="qk2-2D-u5w" firstAttribute="trailing" secondItem="KHH-4A-zis" secondAttribute="trailing" id="oyv-Mw-dbm"/>
                                     <constraint firstItem="lld-St-sa6" firstAttribute="leading" secondItem="c2X-vR-CGd" secondAttribute="leading" id="qt4-bm-xLf"/>
-                                    <constraint firstAttribute="trailing" secondItem="qk2-2D-u5w" secondAttribute="trailing" constant="15" id="tea-aq-pae"/>
                                     <constraint firstItem="OxQ-XA-BmN" firstAttribute="top" secondItem="KHH-4A-zis" secondAttribute="bottom" constant="10" id="ti6-5J-TY7"/>
                                     <constraint firstItem="c2X-vR-CGd" firstAttribute="leading" secondItem="KHH-4A-zis" secondAttribute="leading" id="ubD-d8-aQi"/>
                                     <constraint firstItem="OxQ-XA-BmN" firstAttribute="leading" secondItem="KHH-4A-zis" secondAttribute="leading" id="vr0-Iy-vkK"/>
@@ -168,14 +168,14 @@
                     </view>
                     <connections>
                         <outlet property="cancelButton" destination="7sO-MO-95N" id="jxa-wK-tGj"/>
-                        <outlet property="checklistTitleLabel" destination="KHH-4A-zis" id="woJ-PS-CTY"/>
-                        <outlet property="checklistTitleTextField" destination="OxQ-XA-BmN" id="AqV-63-zQw"/>
-                        <outlet property="chooseIconLabel" destination="YrY-Ze-AFj" id="fzC-eC-Gv4"/>
+                        <outlet property="checklistTitleLabel" destination="KHH-4A-zis" id="Uwv-8X-B80"/>
+                        <outlet property="checklistTitleTextField" destination="OxQ-XA-BmN" id="1VM-Gf-OhF"/>
+                        <outlet property="chooseIconLabel" destination="YrY-Ze-AFj" id="Vu0-6L-cV0"/>
                         <outlet property="containerView" destination="0s8-WP-VG6" id="lQZ-Ui-zZ6"/>
-                        <outlet property="dayToStartTextLabel" destination="LuJ-ad-905" id="KaT-xt-Tnb"/>
+                        <outlet property="dayToStartTextLabel" destination="LuJ-ad-905" id="1V9-mk-ZFZ"/>
                         <outlet property="doneButton" destination="obc-ET-D41" id="vSL-AB-gZE"/>
-                        <outlet property="motivationTextField" destination="lld-St-sa6" id="SWi-S0-gvH"/>
-                        <outlet property="motivationTextLabel" destination="c2X-vR-CGd" id="A2x-mw-5cE"/>
+                        <outlet property="motivationTextField" destination="lld-St-sa6" id="g3t-4I-rVG"/>
+                        <outlet property="motivationTextLabel" destination="c2X-vR-CGd" id="3hE-cp-tip"/>
                         <outlet property="navbarTitle" destination="5v3-7h-MRs" id="ieI-G5-bkX"/>
                     </connections>
                 </viewController>
