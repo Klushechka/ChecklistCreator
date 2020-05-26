@@ -76,16 +76,16 @@ final class CreateChecklistViewController: UIViewController {
     }
     
     @IBAction func doneButtonTapped(_ sender: Any) {
-        guard let viewModel = self.viewModel, let cells = self.collectionView?.visibleCells else { return }
+        guard let viewModel = self.viewModel, let cells = self.collectionView?.visibleCells, let checklistTitleText =  self.checklistTitleTextField.text else { return }
 
-        let activeIconCell = cells.filter {$0.isSelected}.first
+        let activeIconCell = cells.filter { $0.isSelected }.first
 
         guard let selectedIconCell = activeIconCell else { return }
 
         let iconIndexPath = self.collectionView?.indexPath(for: selectedIconCell)
         let selectedIcon = ChecklistIcon(rawValue: iconIndexPath?.row ?? ChecklistIcon.universal.raw)?.name ?? ChecklistIcon.universal.name
 
-        viewModel.createNewChecklist(name: self.checklistTitleTextField.text ?? "", motivationText: self.motivationTextField.text ?? "", icon: selectedIcon)
+        viewModel.createNewChecklist(name: checklistTitleText, motivationText: self.motivationTextField.text ?? "", icon: selectedIcon)
         self.dismiss(animated: true, completion: nil)
         self.checklistAdded?()
     }

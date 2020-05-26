@@ -1,5 +1,5 @@
 //
-//  BordlessTextField.swift
+//  BorderlessTextField.swift
 //  Checklist creator
 //
 //  Created by Olga Kliushkina on 26.05.2020.
