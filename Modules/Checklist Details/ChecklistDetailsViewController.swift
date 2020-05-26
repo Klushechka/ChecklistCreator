@@ -72,6 +72,7 @@ final class ChecklistDetailsViewController: UIViewController {
 
 extension ChecklistDetailsViewController: UICollectionViewDelegate, UICollectionViewDataSource
 {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == self.daysCollectionView {
             return self.viewModel?.checklist?.numberOfDays ?? 30
@@ -113,7 +114,6 @@ extension ChecklistDetailsViewController: UICollectionViewDelegate, UICollection
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == self.daysCollectionView {
-            print("You selected cell #\(indexPath.item)!")
             let cell = collectionView.cellForItem(at: indexPath)
             
             guard let isDayCompleted = (self.viewModel?.checklist?.completedDaysIndices.contains(indexPath.row))  else { return }

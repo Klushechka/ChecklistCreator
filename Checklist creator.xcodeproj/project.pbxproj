@@ -35,6 +35,8 @@
 		69A9CA7C24280AFD00F3F47C /* ChecklistDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A9CA7B24280AFD00F3F47C /* ChecklistDetailsController.swift */; };
 		69A9CA7E24280C8300F3F47C /* UIViewController extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A9CA7D24280C8300F3F47C /* UIViewController extension.swift */; };
 		69B6A826247CFECF00CF619F /* ChecklistDataProviderSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B6A825247CFECF00CF619F /* ChecklistDataProviderSpec.swift */; };
+		69FCDB21247D24FD004C8A1E /* BorderlessTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FCDB20247D24FD004C8A1E /* BorderlessTextField.swift */; };
+		69FCDB23247D2509004C8A1E /* TitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FCDB22247D2509004C8A1E /* TitleLabel.swift */; };
 		F373998B527B4E2FC44DBAC3 /* Pods_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA525767639088E3F41C17C8 /* Pods_Tests.framework */; };
 /* End PBXBuildFile section */
 
@@ -82,6 +84,8 @@
 		69B6A823247CFECF00CF619F /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		69B6A825247CFECF00CF619F /* ChecklistDataProviderSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistDataProviderSpec.swift; sourceTree = "<group>"; };
 		69B6A827247CFECF00CF619F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		69FCDB20247D24FD004C8A1E /* BorderlessTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderlessTextField.swift; sourceTree = "<group>"; };
+		69FCDB22247D2509004C8A1E /* TitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleLabel.swift; sourceTree = "<group>"; };
 		9CD92D1158343D47264D8955 /* Pods-Checklist creator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Checklist creator.release.xcconfig"; path = "Pods/Target Support Files/Pods-Checklist creator/Pods-Checklist creator.release.xcconfig"; sourceTree = "<group>"; };
 		BA525767639088E3F41C17C8 /* Pods_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAA7DE36E27949B50F4FD632 /* Pods-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tests/Pods-Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -124,6 +128,8 @@
 				322D03F122C404FE0040E25F /* UIView extension.swift */,
 				69A9CA7D24280C8300F3F47C /* UIViewController extension.swift */,
 				69170475245DDC1900DEAE06 /* DateFormatter.swift */,
+				69FCDB20247D24FD004C8A1E /* BorderlessTextField.swift */,
+				69FCDB22247D2509004C8A1E /* TitleLabel.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -443,10 +449,12 @@
 				3255C4E222EE100B00863C0F /* ChecklistDataProvider.swift in Sources */,
 				32A857BA22F20657000376F5 /* ChecklistTableViewCell.swift in Sources */,
 				32425A3622A43B9E008349D0 /* ListViewController.swift in Sources */,
+				69FCDB21247D24FD004C8A1E /* BorderlessTextField.swift in Sources */,
 				69A1C7B5242FCA56005E82AD /* IconSelectionCell.swift in Sources */,
 				32A857BD22F21232000376F5 /* ChecklistTableView.swift in Sources */,
 				32425A1622A43654008349D0 /* AppDelegate.swift in Sources */,
 				327B4CB622C3E940003ADB35 /* PlaceholderView.swift in Sources */,
+				69FCDB23247D2509004C8A1E /* TitleLabel.swift in Sources */,
 				69A9CA7C24280AFD00F3F47C /* ChecklistDetailsController.swift in Sources */,
 				322D03F222C404FE0040E25F /* UIView extension.swift in Sources */,
 			);

@@ -23,15 +23,17 @@ final class CreateChecklistViewController: UIViewController {
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var navbarTitle: UINavigationItem!
     
-    @IBOutlet weak var checklistTitleLabel: UILabel!
-    @IBOutlet weak var checklistTitleTextField: UITextField!
-    @IBOutlet weak var motivationTextLabel: UILabel!
-    @IBOutlet weak var motivationTextField: UITextField!
-    @IBOutlet weak var chooseIconLabel: UILabel!
-    @IBOutlet weak var dayToStartTextLabel: UILabel!
+    @IBOutlet weak var checklistTitleLabel: TitleLabel!
+    @IBOutlet weak var checklistTitleTextField: BorderlessTextField!
+    
+    @IBOutlet weak var motivationTextLabel: TitleLabel!
+    @IBOutlet weak var motivationTextField: BorderlessTextField!
+    
+    @IBOutlet weak var chooseIconLabel: TitleLabel!
+    @IBOutlet weak var dayToStartTextLabel: TitleLabel!
 
-    var collectionView: UICollectionView?
-    var weekdayPicker: UIPickerView?
+    private var collectionView: UICollectionView?
+    private var weekdayPicker: UIPickerView?
 
     private let reuseIdentifier = "cell"
     
@@ -59,22 +61,14 @@ final class CreateChecklistViewController: UIViewController {
         self.doneButton.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .medium)
         self.doneButton.isEnabled = false
         
-        self.checklistTitleLabel.font = UIFont.systemFont(ofSize: 20, weight: .medium)
-        self.checklistTitleLabel.text = "Checklist Title:"
+        self.checklistTitleLabel.text = "CHECKLIST TITLE"
         self.checklistTitleTextField.placeholder = "For example, \"30 days without coffee\""
-        self.checklistTitleTextField.font = UIFont.systemFont(ofSize: 18, weight: .light)
 
-        self.motivationTextLabel.text = "Motivation text:"
-        self.motivationTextLabel.font = UIFont.systemFont(ofSize: 20, weight: .medium)
-        
+        self.motivationTextLabel.text = "MOTIVATION TEXT"
         self.motivationTextField.placeholder = "For example, \"You can do it!\""
-        self.motivationTextField.font = UIFont.systemFont(ofSize: 18, weight: .light)
         
-        self.chooseIconLabel.font = UIFont.systemFont(ofSize: 20, weight: .medium)
-        self.chooseIconLabel.text = "Choose an icon for your checklist:"
-
-        self.dayToStartTextLabel.font = UIFont.systemFont(ofSize: 20, weight: .medium)
-        self.dayToStartTextLabel.text = "Choose the day to start:"
+        self.chooseIconLabel.text = "CHECKLIST ICON"
+        self.dayToStartTextLabel.text = "DAY TO START"
     }
     
     @IBAction func cancelButtonTapped(_ sender: Any) {
@@ -82,16 +76,16 @@ final class CreateChecklistViewController: UIViewController {
     }
     
     @IBAction func doneButtonTapped(_ sender: Any) {
-        guard let viewModel = self.viewModel, let cells = self.collectionView?.visibleCells else { return }
+        guard let viewModel = self.viewModel, let cells = self.collectionView?.visibleCells, let checklistTitleText =  self.checklistTitleTextField.text else { return }
 
-        let activeIconCell = cells.filter {$0.isSelected}.first
+        let activeIconCell = cells.filter { $0.isSelected }.first
 
         guard let selectedIconCell = activeIconCell else { return }
 
         let iconIndexPath = self.collectionView?.indexPath(for: selectedIconCell)
         let selectedIcon = ChecklistIcon(rawValue: iconIndexPath?.row ?? ChecklistIcon.universal.raw)?.name ?? ChecklistIcon.universal.name
 
-        viewModel.createNewChecklist(name: self.checklistTitleTextField.text ?? "", motivationText: self.motivationTextField.text ?? "", icon: selectedIcon)
+        viewModel.createNewChecklist(name: checklistTitleText, motivationText: self.motivationTextField.text ?? "", icon: selectedIcon)
         self.dismiss(animated: true, completion: nil)
         self.checklistAdded?()
     }
@@ -130,6 +124,7 @@ extension CreateChecklistViewController: UICollectionViewDelegate, UICollectionV
 
         if indexPath.row == ChecklistIcon.universal.raw {
             cell?.isHighlighted = true
+            cell?.isSelected = true
         }
 
         return cell ?? UICollectionViewCell()
@@ -137,7 +132,6 @@ extension CreateChecklistViewController: UICollectionViewDelegate, UICollectionV
 
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("You selected cell #\(indexPath.item)!")
         highlightSelectedCell(with: indexPath)
     }
 
