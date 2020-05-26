@@ -149,6 +149,9 @@
 		32425A0922A43654008349D0 = {
 			isa = PBXGroup;
 			children = (
+				32425A1C22A43656008349D0 /* Assets.xcassets */,
+				32425A1E22A43656008349D0 /* LaunchScreen.storyboard */,
+				32425A2122A43656008349D0 /* Info.plist */,
 				699C1CC3247D105800DB851E /* Modules */,
 				322D03EE22C403CF0040E25F /* Utils */,
 				69B6A824247CFECF00CF619F /* Tests */,
@@ -179,9 +182,6 @@
 				322D03F722C40A2B0040E25F /* PlaceholderView.xib */,
 				327B4CB522C3E940003ADB35 /* PlaceholderView.swift */,
 				32425A1522A43654008349D0 /* AppDelegate.swift */,
-				32425A1C22A43656008349D0 /* Assets.xcassets */,
-				32425A1E22A43656008349D0 /* LaunchScreen.storyboard */,
-				32425A2122A43656008349D0 /* Info.plist */,
 			);
 			path = "List of Checklists";
 			sourceTree = "<group>";
@@ -616,7 +616,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PTT8AW7PPX;
-				INFOPLIST_FILE = "$(SRCROOT)/Modules/List of Checklists/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -637,7 +637,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4TV82EX237;
-				INFOPLIST_FILE = "$(SRCROOT)/Modules/List of Checklists/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

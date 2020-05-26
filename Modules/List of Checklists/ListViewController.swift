@@ -85,13 +85,13 @@ final class ListViewController: UIViewController {
         setAddChecklistCallback()
     }
 
-    func setUpdateTableViewCallback() {
+    private func setUpdateTableViewCallback() {
         self.viewModel?.numberOfChecklistsChanged = {
             self.setDataToTableView()
         }
     }
     
-    func setAddChecklistCallback() {
+    private func setAddChecklistCallback() {
         guard let placeholderView = self.placeholderView else {
             assertionFailure("Placeholder view should not be nil")
             
@@ -103,7 +103,7 @@ final class ListViewController: UIViewController {
         }
     }
     
-    func presentAddChecklistVC() {
+    private func presentAddChecklistVC() {
         let storyboard: UIStoryboard = UIStoryboard(name: "CreateChecklistViewController", bundle: nil)
         let checklistViewController = storyboard.instantiateViewController(withIdentifier: "createChecklist") as? CreateChecklistViewController
         

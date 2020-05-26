@@ -102,6 +102,7 @@ extension CreateChecklistViewController {
 
         self.doneButton.isEnabled = !checklistTitleText.isEmpty
     }
+    
 }
 
 extension CreateChecklistViewController: UICollectionViewDelegate, UICollectionViewDataSource
@@ -182,12 +183,7 @@ extension CreateChecklistViewController: UIPickerViewDelegate, UIPickerViewDataS
     }
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int){
-        print ("I've selected the first day of checklist:\(DateFormatter.shortWeekdayNames[row])")
-
         self.view.endEditing(true)
     }
-
-
-
-
+    
 }

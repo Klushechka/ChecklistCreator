@@ -17,9 +17,6 @@ final class CreateChecklistModel: CreateChecklistViewModel {
         let checklistDataProvider = ChecklistDataProvider.shared
         
         checklistDataProvider.saveChecklist(checklist: checklist)
-        
-        print (Realm.Configuration.defaultConfiguration.fileURL as Any)
-        
     }
     
 }
